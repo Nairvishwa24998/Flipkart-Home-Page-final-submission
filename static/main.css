@@ -1,0 +1,575 @@
+/*
+commonly used variables
+*/
+
+
+
+:root
+{
+--viewwidth: 1519.2px;
+--viewwidth2: 1490.2px;
+}
+
+
+
+
+/*
+General Tags and Propeties
+*/
+
+
+
+
+*
+{
+box-sizing: border-box;
+}
+
+body 
+{
+margin: 0;
+font-family: Roboto,Arial,sans-serif;
+background-color: #F1F3F6;
+}
+/*
+undoing some boostrap changes 
+*/
+ul,ol
+{
+list-style-type: none;
+padding-left: 0px;
+}
+
+
+p
+{
+font-weight: 500;
+font-size: 14px;
+}
+
+a{
+text-decoration: none;
+color: black;
+}
+
+h2
+{ 
+font-size: 22px;
+line-height: 32px;
+display: inline-block;
+font-weight: 500;
+}
+
+h3
+{
+font-size: 14px;
+color: #b2b2b2;
+font-weight: 400;
+}
+
+li{
+    list-style-type: none;
+}
+
+
+/* input popup/modal */
+
+.btn-custom2{
+background-color: #FFFFFF;
+color: #2874F0;
+}
+
+.btn-custom{
+background-color: #FB641B;
+color: #FFF;
+}
+
+/* setting the required features for the popup. Setting it as a flex container */
+.custom{
+display: flex;
+width: 750px;
+height: 528px;
+flex-direction: row;
+}
+
+
+
+
+/* Divide the input popup into three blocks */
+
+
+
+
+/* for the image on the left */
+.block1{
+width: 269.2px;
+height: 528px;
+}
+
+/* to hold everything on the right */
+.block2{
+display: flex;
+width: 480.8px;
+height: 528px;
+justify-content: center;
+}
+
+/*a sub block within block 2 to hold all the elements */
+.inblock2{
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+width: 324.917px;
+}
+
+
+
+
+/*
+Navbar and everything inside
+*/
+
+
+
+
+/* bootstrap 5 does not have a direct colour for this so setting custom colour for the navbar */
+.navbar-custom
+{
+background-color: #2874F0;
+height: 56px;
+}
+    
+.logo
+{
+float: left;
+padding: 2px 16px 12px;
+}
+
+.searchbar
+{
+margin: auto 0%;
+flex: 0 1 520px; 
+padding: 7px 16px;
+}
+
+.search
+{
+margin: auto 2% auto 0%;
+width: 41.333px;
+height: 38px;
+}
+
+.login
+{
+margin: auto 2% auto 3%;
+width: 121.1px;
+height: 32px;
+padding: 0px 16px;
+}
+
+.becomeaseller
+{
+margin: auto 2%;
+flex-shrink: 0;
+}
+
+.moreholder, .dropdownentryholder
+{
+display: flex;
+justify-content: space-evenly;
+}
+
+.dropdownitem:hover, .dropdownpfont:hover
+{
+background-color: inherit;
+}
+
+.dropdownitem:hover{
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.more
+{
+margin: auto 5% auto 1%;
+}
+
+.arrow
+{
+margin: auto 1% auto 5%;
+}
+
+.arrow2
+{
+margin: 12% 1% auto 5%;
+}
+
+.cart
+{
+margin: 1.2% 0% 1.2% 2%; 
+}
+
+.cartext
+{
+margin: auto 0.5%;
+}
+
+.main{
+margin-top: 60px;
+}
+
+.newcustomercheck{
+display: flex;
+justify-content: space-between;
+}
+
+.dropdown-content
+{
+display: none;
+position: absolute;
+background-color: #FFFFFF;
+min-width: 250px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 10;
+top: 97%;
+}
+
+/* property specific to a tags within dropdown-content */
+.dropdown-content a 
+{
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+  
+.dropdown:hover .dropdown-content 
+{
+display: block;
+}
+
+
+
+
+/* This would hold all the categories and their dropdowns*/
+.secondrow
+{
+height: 111.6px;
+display: flex;
+justify-content: center;
+background-color: #FFFFFF;
+
+}
+
+.secondrowcontaineritem
+{
+height: 111.6px;
+display: flex;
+justify-content: space-evenly;
+width: 1280px;
+}
+
+
+/* this becomes the flex item which hold the other items*/
+.category
+{
+display: flex;
+height: 111.6px;
+min-width: 104px;
+max-width: 106px;
+}
+
+/* for each image */
+.categories
+{
+height: 64px;
+}
+
+
+.dropdownpfont{background-color: #FFFFFF;font-weight: 400;}
+
+
+.dropdownpfont:hover{
+    color:#2874F0;
+}
+
+
+
+
+/* This row would hold a carousel consisting of three images */
+
+
+
+
+/* flex container */
+.thirdrowcontainer
+{
+display: flex;
+height: 280px;
+justify-content: center;
+
+}
+/* flex container + item centered to hold the carousel */
+.thirdrowholder
+{
+display: flex;
+flex-shrink: 0;
+height: 280px;
+width: var(--viewwidth); 
+
+}
+
+
+/* so the side arrows don't appear over dropdowns */
+.carousel-control-next, .carousel-control-prev{
+    z-index: 0;
+}
+
+
+
+
+/* properties of the image */
+.scrollimage
+{
+width: 100%;
+height: 100%;
+position: relative;
+padding: 8px;
+}
+
+
+
+
+/*
+This row would hold a set of three ads
+*/
+
+
+
+
+/* Flex container for the ads */
+.fourthrowcontainer
+{
+display: flex;
+justify-content: center;
+width: 100%;
+}
+
+/* flex container + item of specified width centred to hold the ads */
+.fourthrowholder{
+display: flex;
+width: var(--viewwidth); 
+justify-content: center;
+height: 293.217px;
+flex-shrink: 0;
+}
+
+.ads{
+display: flex;
+width: 33%;
+flex-shrink: 0;
+}
+
+.ads img
+{
+width:100%; 
+height:100%
+}
+
+
+
+
+/* 
+This would hold one large ad
+*/
+
+
+
+
+/* fifthrow flex container for the ads */
+.fifthrowcontainer
+{
+display: flex;
+justify-content: center;
+width: 100%;
+}
+
+/* flex item + container to hold the ads centered on the screen */
+.fifthrowholder
+{
+display: flex;
+width: var(--viewwidth); 
+flex-shrink: 0;
+}
+
+/* property of the ad */
+.finalad
+{
+width: 100%;
+padding: 1%;
+}
+
+
+
+
+/*
+This is the set of tags which would hold the row of products
+*/
+
+
+
+
+/* flex container spanning the width of the window */
+.productrowcontainer
+{
+display: flex;
+justify-content: center;
+width: 100%;
+margin: 0px 0px 20px 0px;
+}
+
+/* Flex container + item positionaed at the center of the previous flex container to hold more flex items */
+.productrowholder
+{
+box-sizing: border-box;
+display: flex;
+background-color: #FFFFFF;
+padding: 10px;
+}
+
+/* Flex container + item which holds the two flex items for the heading and body */
+.adheadbody{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 0px 10px;
+}
+
+.adheading
+{
+    padding: 15px 0px 5px 0px;
+    width: 100%;
+}
+
+/* flex container + item to hold set of ads */
+.adbody{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+/* since size of ad product is different hold them all within a div each of below width */
+.aditemholder{
+    width: 181px;
+}
+
+/* tag for each product flex container */
+.aditem{
+    display: flex;
+    margin: 0px 1%;
+    justify-content: left;
+    flex-direction: column;
+}
+
+/* magnify when hovered */
+.aditem:hover{
+    transform: scale(1.02);
+}
+
+
+
+/* 
+Tags for the footer and its elements
+*/
+
+
+
+/* two div items would be placed inside the footer container */
+footer{
+background-color: #172337;
+width: 100%;
+height: max-content;
+margin-bottom: 0px;
+position: relative;
+overflow: visible;
+}
+
+/* Properties of the two items */
+
+/* common properties for both */
+.bottomdetails,.bottomdetails2
+{
+display: flex;
+width: 100%;
+}   
+/* first div and flex container */
+.bottomdetails{
+height: 70%; 
+justify-content: center;
+}
+/* second div and flex container */
+.bottomdetails2{
+height: 30%; 
+justify-content: space-around;
+}
+
+
+/* flex item for two kinds of individual columns within bottomdetails */
+.column{
+flex: 1 1 0;
+margin: 2% 1%;
+padding:0;
+height: 60%;
+}
+
+.column2
+{
+flex: 1 1 0;
+box-sizing:border-box;
+margin: 2% 1%;
+padding:0;
+height: 60%;
+}
+
+/* for heading of each column */
+.heading{
+color: #878787;
+font-size: 12px;
+font-weight: 400;
+margin-bottom: 9px;
+}
+
+
+
+/* For contents within each column within the first flex container. The four four columns' contents would follow contents while the other two would follow contents2 */
+
+.contents, .contents2{
+line-height: 2;
+color: #fff;
+display: block;
+font-weight: 400;
+font-size: 12px;
+}
+
+/* for contents within the last two columns */
+.contents2
+{
+font-size: 13px;
+font-weight: 500;
+}
+
+.contents:hover,.contents2:hover
+{
+color: #FFF;
+}
+
+.contents:hover
+{
+text-decoration: underline;
+}
+.contents2:hover{
+text-decoration: none;
+}
+
+
+
+

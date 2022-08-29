@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<!-- Latest compiled and minified CSS -->
+
+
+<!-- had issues overriding online boostrap so made changes to boostrap code itself -->
+ <link rel= "stylesheet" href = "static/bootstrap.css">
+
+ <!-- Latest compiled JavaScript -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> 
+
+ <script>
+  // JavaScript functions to invert arrow  
+  
+  // Each checker and checkout function pair works together. They take the id of the parent as a parameter and obtain the relevant child  and rotate it accordingly
+
+  function howerchecker(e){
+    let x = document.getElementById(e);
+    x.children[1].style.transform = "rotate(180deg)";
+  }
+
+  function howercheckout(e){
+    let x = document.getElementById(e);
+    x.children[1].style.transform = null;
+  }
+  
+
+  function howerchecker1(e){
+    let x = document.getElementById(e);
+    x.children[0].children[0].children[1].children[0].children[1].style.transform = "rotate(180deg)";
+  }
+
+  function howercheckout1(e){
+    let x = document.getElementById(e);
+    x.children[0].children[0].children[1].children[0].children[1].style.transform = null;
+  }
+ </script>
+
+ <link rel= "stylesheet" href = "static/main.css">
+</head>
+
+<body>
+  <header>
+      <!-- bootstrap navbar which acts as flexbox container with custom colour and is fixed to the top -->
+      <nav class="d-flex justify-content-center navbar fixed-top navbar-expand navbar-custom">
+          <div class = "logo">
+            <a href="#"><img src="static/flipkart logo.png" style="width: 75px; height: 20.1167px"></a>
+          </div>
+          <input class = "searchbar" style = "border: none;" placeholder="Search for products, brands and more" style="height: 36px; border-radius: 2%; font-weight: bold;">
+          <input type="image" class = "search" src="static/search.png"> 
+          <!-- drop down for login -->
+          <div class = "dropdown">
+          <button class = "login" style="background-color: #FFFFFF;" type="submit"  data-bs-toggle="modal" data-bs-target="#loginmodal"><b style="color: #2874F0; background-color: #FFFFFF;">Login</b></button>
+          <div class="dropdown-content">
+            <ul>
+              <li class="dropdownitem"><div class = "newcustomercheck"><a href="#" style="font-weight: 800;"> New Customer ?</a><a href="#"><b style="color: #2874F0; background-color: #FFFFFF;">Sign Up</b></a></div>
+              <li class="dropdownitem"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="" viewBox="0 0 16 14"><path fill="#2874F1" fill-rule="nonzero" d="M7 .333A6.67 6.67 0 0 0 .333 7 6.67 6.67 0 0 0 7 13.667 6.67 6.67 0 0 0 13.667 7 6.67 6.67 0 0 0 7 .333zm0 2c1.107 0 2 .894 2 2 0 1.107-.893 2-2 2s-2-.893-2-2c0-1.106.893-2 2-2zM7 11.8a4.8 4.8 0 0 1-4-2.147C3.02 8.327 5.667 7.6 7 7.6c1.327 0 3.98.727 4 2.053A4.8 4.8 0 0 1 7 11.8z" style="padding: 0 2%;"></path></svg> My Profile</a></li>
+              <li class="dropdownitem"><a href="#"><svg width="16" height="16" class="" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g id="Desktop_VIP" stroke="none" stroke-width="1" fill-rule="evenodd"><g transform="translate(7.873 .143)"><path d="M6.484 4.94s2.476 1.227 3.698 1.748c1.188.506 1.323 2.4.016 3.04-1.307.64-1.67.744-1.67.744s.208-.53.178-1.044c-.085-.914-2.787-1.656-4.576-2.094 0 0-1.375-4.311-1.995-5.512C1.509.612.242.11.242.11l2.995.04s1.03-.05 1.488 1.055c.456 1.106 1.76 3.734 1.76 3.734" fill="#2873F0" mask="url(#b)"></path></g><g transform="translate(8.635 8.27)"><path d="M5.547 6.265S4.334 8.713 3.8 9.965c-.507 1.187-2.44 1.322-3.079.015C.081 8.673.015 8.44.015 8.44s.387.076 1 .048c.915-.084 1.7-2.786 2.138-4.575 0 0 4.311-1.377 5.513-1.997 1.21-.624 1.71-1.892 1.71-1.892l-.04 3.44s.05.587-1.055 1.044c-1.105.455-3.734 1.757-3.734 1.757" fill="#2873F0" mask="url(#d)"></path></g><g transform="translate(0 8.778)"><path d="M4.655 5.573S2.193 4.353.956 3.826C-.232 3.32-.367 1.423.94.786 2.248.145 2.774.026 2.774.026s-.34.545-.255 1.157C2.606 2.1 5.22 2.74 7.008 3.179c0 0 1.427 4.287 1.997 5.513.695 1.493 1.848 1.72 1.848 1.72l-3.396-.05s-.585.05-1.042-1.055c-.458-1.106-1.76-3.734-1.76-3.734" fill="#2873F0" mask="url(#f)"></path></g><g transform="translate(0 .143)"><path d="M4.857 4.754s1.219-2.46 1.747-3.699c.506-1.188 2.4-1.321 3.04-.016.64 1.308.701 1.544.701 1.544s-.482.007-.993.035c-.916.087-1.663 2.702-2.101 4.49 0 0-4.296 1.405-5.513 1.996C.066 9.916 0 10.957 0 10.957l.068-3.4s-.05-.586 1.055-1.043c1.105-.457 3.734-1.76 3.734-1.76" fill="#2873F0" mask="url(#h)"></path></g></g></svg> Flipkart Plus Zone</a></li>
+              <li class="dropdownitem"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" class="" viewBox="0 0 16 12"><g fill="none" fill-rule="evenodd"><path fill="#2874F1" d="M6.038 11.682h8.407c.565 0 1.018-.38 1.13-.855V.847H.426v9.98c0 .475.452.855 1.017.855h2.232v-2.98H1.94L4.776 6l2.996 2.703H6.038v2.98z"></path></g></svg> Orders</a></li>
+              <li class="dropdownitem"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" class="" width="16" height="14" viewBox="0 0 20 16"><path d="M8.695 16.682C4.06 12.382 1 9.536 1 6.065 1 3.219 3.178 1 5.95 1c1.566 0 3.069.746 4.05 1.915C10.981 1.745 12.484 1 14.05 1 16.822 1 19 3.22 19 6.065c0 3.471-3.06 6.316-7.695 10.617L10 17.897l-1.305-1.215z" fill="#2874F0" class="" stroke="#FFF" fill-rule="evenodd" opacity=".9"></path></svg> Wishlist</a></li>
+              <li class="dropdownitem"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" class="" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><path fill="#FFF" d="M0 0h16v16H0z"></path><path fill="#2874F0" d="M16 9.25v2.5c0 .69-.597 1.25-1.333 1.25H1.333C.597 13 0 12.44 0 11.75v-2.5c.736 0 1.333-.56 1.333-1.25S.736 6.75 0 6.75v-2.5C0 3.56.597 3 1.333 3h13.334C15.403 3 16 3.56 16 4.25v2.5c-.736 0-1.333.56-1.333 1.25S15.264 9.25 16 9.25zM4.4 3.625v1.25h.533v-1.25H4.4zm0 2.5v1.25h.533v-1.25H4.4zm0 2.5v1.25h.533v-1.25H4.4zm0 2.5v1.25h.533v-1.25H4.4z"></path></g></svg> Rewards</a></li>          
+              <li class="dropdownitem"><a href="#"><svg width="16" height="16" class="" viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(-9.694 -9)"><ellipse cx="20.557" cy="20" rx="20.557" ry="20"></ellipse><path d="M7 6h28v28H7z"></path><path fill="#2874F0" fill-rule="nonzero" d="M31.5 27v1.167a2.34 2.34 0 0 1-2.333 2.333H12.833a2.333 2.333 0 0 1-2.333-2.333V11.833A2.333 2.333 0 0 1 12.833 9.5h16.334a2.34 2.34 0 0 1 2.333 2.333V13H21a2.333 2.333 0 0 0-2.333 2.333v9.334A2.333 2.333 0 0 0 21 27h10.5zM21 24.667h11.667v-9.334H21v9.334zm4.667-2.917c-.97 0-1.75-.782-1.75-1.75s.78-1.75 1.75-1.75c.968 0 1.75.782 1.75 1.75s-.782 1.75-1.75 1.75z"></path></g></svg> Giftcards</a></li>
+            </ul>
+          </div>
+          </div>
+          <a class = "becomeaseller" href="#"><b style="color: #FFFFFF; min-width: 100%;">Become a Seller</b></a>
+          <!-- drop down for more -->
+          <div class="dropdown">
+          <div id = "howerercontainer" class = "moreholder" onmouseover="howerchecker(this.id);" onmouseleave="howercheckout(this.id);">
+          <a class = "more" href = "#"><b style="color: #FFFFFF;">More</b></a>
+          <a id = "howerer" class = "arrow" href = "#"><img src="static/arrow.png" style="height: 4px; width: 6px"></a>
+          </div>
+          <div class="dropdown-content">
+              <li class="dropdownitem"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" class="" viewBox="0 0 12 14"><g fill="none" fill-rule="evenodd"><path d="M-4-3h20v20H-4z"></path><path fill="#2874F1" d="M6.17 13.61c-1.183 0-1.922-.723-1.922-1.88H8.09c0 1.157-.74 1.88-1.92 1.88zm4.222-5.028l1.465 1.104v1.07H0v-1.07l1.464-1.104v-2.31h.004c.035-2.54 1.33-4.248 3.447-4.652V.992C4.915.446 5.37 0 5.928 0c.558 0 1.014.446 1.014.992v.628c2.118.404 3.412 2.112 3.446 4.65h.004v2.312z"></path></g></svg> Notification Preferences</a></li>
+              <li class="dropdownitem"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="" viewBox="0 0 14 17"><g fill="none" fill-rule="evenodd"><path fill="#2874F0" fill-rule="nonzero" d="M12.25.542H1.75c-.833 0-1.5.675-1.5 1.5v10.5c0 .825.667 1.5 1.5 1.5h3L7 16.292l2.25-2.25h3c.825 0 1.5-.675 1.5-1.5v-10.5c0-.825-.675-1.5-1.5-1.5zm-4.5 12h-1.5v-1.5h1.5v1.5zM9.303 6.73l-.676.69c-.54.547-.877.997-.877 2.122h-1.5v-.375c0-.825.338-1.575.877-2.123l.93-.945c.278-.27.443-.646.443-1.058 0-.825-.675-1.5-1.5-1.5s-1.5.675-1.5 1.5H4c0-1.658 1.342-3 3-3s3 1.342 3 3c0 .66-.27 1.26-.697 1.687z"></path></g></svg> 24*7 Customer Care</a></li>
+              <li class="dropdownitem"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" class="" viewBox="0 0 18 10"><g fill="none" fill-rule="evenodd"><path fill="#2874F0" fill-rule="nonzero" d="M12.333 0l1.91 1.908-4.068 4.067-3.333-3.333L.667 8.825 1.842 10l5-5 3.333 3.333 5.25-5.24L17.333 5V0"></path></g></svg> Advertise</a></li>
+              <li class="dropdownitem"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" class="" viewBox="0 0 12 14"><g fill="none" fill-rule="evenodd"><path d="M-4-3h20v20H-4z"></path><path fill="#2874F0" fill-rule="nonzero" d="M12 4.94H8.57V0H3.43v4.94H0l6 5.766 6-5.765zM0 12.354V14h12v-1.647H0z"></path></g></svg> Download App</a></li>
+          </div>
+          </div>
+          <a class = "cart" href = "#"><img src = "static/cartlogo.png" style="height: 24px; width: 24px"></a>
+          <a class = "cartext" href="#"><b style="color: #FFFFFF;">Cart</b></a>
+      </nav>
+  </header>
+
+
+<div class="main">
+  <div class = "secondrow">
+    <div class="secondrowcontaineritem">
+        <ul class="category ">
+          <a href = "#">
+            <li><img class = "categories" src="static/Top Offers.png"></li>
+            <li style="min-width: 70px;"><p>Top Offers</p></li>
+          </a>
+        </ul>
+        <ul class="category">
+          <a href="#">
+            <li><img class = "categories" src="static/Grocery.png"></li>
+            <li><p>Grocery</p></li>
+          </a>
+        </ul>
+        <ul class="category">
+          <a href="#">
+            <li><img class = "categories" src="static/Mobiles.png"></li>
+            <li><p>Mobiles</p></li>
+          </a>
+        </ul>
+
+        <div class="dropdown" id = "howerercontainer1" onmouseover="howerchecker1(this.id);" onmouseleave="howercheckout1(this.id);">
+          <ul class="category">
+            <a href="#">
+              <li><img class = "categories" src="static/Fashion.png"></li>
+              <li><div class="dropdownentryholder"><p>Fashion</p><img src="static/arrow2.png" class="arrow2" style="height: 4px; width: 6px"></div></li>
+            </a>
+          </ul>
+          <div class="dropdown-content">
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Men's Top Wear</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Men's Bottom Wear</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Women Ethnic</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Women Western</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Men Footwear</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Women Footwear</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Watches and Acessories</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Bags, Suitcases & Luggage</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Kids</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Essentials</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Winter</p></a></li>
+          </div>
+        </div>
+
+        <div class="dropdown" id = "howerercontainer2" onmouseover="howerchecker1(this.id);" onmouseleave="howercheckout1(this.id);">
+          <ul class = "category">
+            <a href="#">
+              <li><img class = "categories" src="static/Electronics.png"></li>
+              <li><div class="dropdownentryholder"><p>Electronics</p><img src="static/arrow2.png" class="arrow2" style="height: 4px; width: 6px"></div></li>
+            </a>
+          </ul>
+          <div class="dropdown-content">
+            <ul>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Audio</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Electronics GST Store</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont"> Cameras & Acessories</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Computer Peripherals</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Gaming</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Health & Personal Center</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Laptop Accesories</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Laptop and Desktop</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Mobile Accesories</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Powerbank</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Smart Home Automation</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Smart Wearables</p></a></li>
+              </ul>
+          </div>
+        </div>
+        <div class="dropdown" id = "howerercontainer3" onmouseover="howerchecker1(this.id);" onmouseleave="howercheckout1(this.id);">
+          <ul class="category">
+            <a href="#">
+              <li><img class = "categories" src="static/Home.png"></li>
+              <li>
+              <div class="dropdownentryholder"><p>Home</p><img src="static/arrow2.png" class="arrow2" style="height: 4px; width: 6px"></div></li>
+            </a>
+          </ul>
+          <div class="dropdown-content">
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Home Furnishings</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Furniture Studio</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Living Room Furniture</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Kitchen & Dining</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Bedroom Furniture</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Home Decor</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Tools & Utility</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Work Space Furniture</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Lightings & Electricals</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Space Saving Furniture</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Cleaning & Bath</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Kids Furniture</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Pet & Gardening</p></a></li>
+          </div>
+        </div>
+        <ul class="category">
+          <a href="#">
+          <li><img class = "categories" src="static/Appliances.png"></li>
+          <li><p>Appliances</p></li>
+        </a>
+        </ul>
+        <ul class="category">
+          <a href="#">
+          <li><img class = "categories" src="static/Travel.png"></li>
+          <li><p>Travel</p></li>
+          </a>
+        </ul>
+        <div class="dropdown" id = "howerercontainer4"  onmouseover="howerchecker1(this.id);" onmouseleave="howercheckout1(this.id);">
+          <ul class="category">
+            <a href="#">
+              <li>
+                <img class = "categories" src="static/Beauty, Toys and More.png">
+              </li>
+              <li>
+                <div class="dropdownentryholder">
+                  <p>Beauty, Toys & More</p>
+                  <img src="static/arrow2.png" class="arrow2" style="height: 4px; width: 6px;">
+                </div>
+              </li>
+            </a>
+          </ul>
+          <div class="dropdown-content">
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Beauty & Personal Care</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Men's Grooming</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Food & Drinks</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Nutrition & Healthcare</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Baby Care</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Toys & School Supplies</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Sports & Fitness</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Books</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Music</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Stationery & Office Supplies</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Auto Accesories</p></a></li>
+            <li class="dropdownitem"><a href="#"><p class = "dropdownpfont">Safety & Hygiene Essentials</p></a></li>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- Code for Modal -->
+<!-- Need to give id for the button to return pop using Bootstrap 5-->
+<div class = "modal" id = "loginmodal" role = "dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content custom">
+        <div class="block1"><img src="static/loginpopup.png" style="height:100%;"></div>
+        <div class="block2">
+        <div class = "inblock2">
+          <input placeholder="Enter Email/Mobile number" style="border-style: none none solid none;">
+          <input placeholder="Enter Password" style="border-style: none none solid none;">
+          <span><p style="  color: #878787;
+            font-size: 12px;
+            font-weight: 400;
+          ">By continuing, you agree to Flipkart's Terms of Use and Privacy Policy.</p></span>
+          <button type="button" class="btn btn-custom">Login</button>
+          <span><p style="text-align: center;">OR</p></span>
+          <button type="button" class="btn btn-custom2 shadow p-3 mb-5 bg-white rounded">Request OTP</button>
+          <a href = "#"><b><p style="text-align: center;">New to Flipkart? Create an account</p></b></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<!-- Moving Carousel using bootstrap. time interval set to 3 for the banner to move every three seconds -->
+  <div class="carousel slide thirdrowcontainer" id="carouselExampleControls" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class = "thirdrowholder">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href="#"><img class="d-block w-100 scrollimage" src="static/scrollimage1.png" alt="First slide"></a>
+        </div>
+        <div class="carousel-item">
+          <a href="#"><img class="d-block w-100 scrollimage" src="static/scrollimage2.png" alt="Second slide"></a>
+        </div>
+        <div class="carousel-item">
+          <a href="#"><img class="d-block w-100 scrollimage" src="static/scrollimage3.png" alt="Third slide"></a>
+        </div>
+        <!-- used to position the arrows appropriately -->
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev" style="margin-right: 20%;">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only"></span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next" style="margin-left: 85%">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Holds the three ads -->
+  <div class="fourthrowcontainer">
+    <div class = "fourthrowholder">
+      <div class="ads"><a href="#"><img src="static/ad1.png"></a></div>
+      <div class="ads"><a href="#"><img src="static/ad2.png"></a></div>
+      <div class="ads"><a href="#"><img src="static/ad3.png"></a></div>
+    </div>
+  </div>
+
+  <!-- Holds the large ad -->
+  <div class="fifthrowcontainer">
+    <div class="fifthrowholder">
+      <a href="#" class="finalad">
+      <img src="static/ad4.png" style="width: inherit">
+      </a>
+    </div>
+  </div>
+  
+  <!-- Each of these divs holds a row of products -->
+  <div class="productrowcontainer">
+    <div class="productrowholder">
+        <div class="adheadbody">
+          <div class="adheading">
+            <b><h2>Beauty, Food, Toys and More</h2></b>
+            <h3>Beauty, Food, Toys and More</h3>
+          </div>
+          <hr />
+          <div class = "adbody">
+            <div class="aditemholder">
+                 
+              <a title="Up to 70% Off" class="aditem" href="/toys/action-toys/pr?sid=tng%2Csv3&amp;p%5B%5D=facets.rating%255B%255D%3D4%25E2%2598%2585%2B%2526%2Babove&amp;hpid=rTHd3P8c2Eh-2fwrqbmKvqp7_Hsxr70nj65vMAAFKlc%3D&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJVcCB0byA3MCUgT2ZmIl0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fSwiaGVyb1BpZCI6eyJzaW5nbGVWYWx1ZUF0dHJpYnV0ZSI6eyJrZXkiOiJoZXJvUGlkIiwiaW5mZXJlbmNlVHlwZSI6IlBJRCIsInZhbHVlIjoiR1RPR1k2VkJWTVZZWkdISCIsInZhbHVlVHlwZSI6IlNJTkdMRV9WQUxVRUQifX0sInRpdGxlIjp7Im11bHRpVmFsdWVkQXR0cmlidXRlIjp7ImtleSI6InRpdGxlIiwiaW5mZXJlbmNlVHlwZSI6IlRJVExFIiwidmFsdWVzIjpbIlRyaWN5Y2xlcyAmIFJpZGVvbnMiXSwidmFsdWVUeXBlIjoiTVVMVElfVkFMVUVEIn19fX19&amp;fm=neo%2Fmerchandising&amp;iid=M_629a8246-fcd7-4ed4-89a2-2d7a9c719f65_6.E6ABSCK1PFW6&amp;ppt=hp&amp;ppn=homepage&amp;ssid=pqp7km5yucckdbls1661327736595&amp;otracker=hp_omu_Beauty%252C%2BFood%252C%2BToys%2B%2526%2Bmore_1_6.dealCard.OMU_E6ABSCK1PFW6_6&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Beauty%252C%2BFood%252C%2BToys%2B%2526%2Bmore_NA_dealCard_cc_1_NA_view-all_6&amp;cid=E6ABSCK1PFW6"><div style="height: 150px;"><div style="height: 150px; width: 150px;"><img alt="McFARLANE 30155" src="https://rukminim1.flixcart.com/image/150/150/kzegk280/action-figure/9/v/t/3-30155-mcfarlane-2-5-original-imagbeyyzehpyk2m.jpeg?q=70"></div></div><div style="font-size: 14px;
+                font-weight: 500;
+                margin-top: 15px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: black;">Tricycles &amp; Rideons</div><div style="color: #388e3c;
+                padding-top: 8px;">Up to 70% Off</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop Now</div><div></div></a>
+            </div>
+            <div class="aditemholder">
+              <a title="Up to 70% Off" class="aditem" href="/automotive-accessories/helmets-and-riding-gear/helmet-and-accessories/biker-helmets/pr?sid=1mt%2Cztf%2Civ8%2Ctih&amp;marketplace=FLIPKART&amp;hpid=8c7ftGcyG0cjQM1vrbGcgap7_Hsxr70nj65vMAAFKlc%3D&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJGcm9tIDY5OSJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX0sImhlcm9QaWQiOnsic2luZ2xlVmFsdWVBdHRyaWJ1dGUiOnsia2V5IjoiaGVyb1BpZCIsImluZmVyZW5jZVR5cGUiOiJQSUQiLCJ2YWx1ZSI6IkhMTUZIOFZBTkhFQUFaRVYiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19LCJ0aXRsZSI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ0aXRsZSIsImluZmVyZW5jZVR5cGUiOiJUSVRMRSIsInZhbHVlcyI6WyJSaWRlciBIZWxtZXRzIl0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fX19fQ%3D%3D&amp;fm=neo%2Fmerchandising&amp;iid=M_5a7aa6b5-9bb1-4d91-97e4-fd6125b62244_6.V5VSIKF9EZSQ&amp;ppt=None&amp;ppn=None&amp;ssid=1h3c5uzydzv1v08w1661355192447&amp;otracker=hp_omu_Beauty%252C%2BFood%252C%2BToys%2B%2526%2Bmore_3_6.dealCard.OMU_V5VSIKF9EZSQ_5&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Beauty%252C%2BFood%252C%2BToys%2B%2526%2Bmore_NA_dealCard_cc_3_NA_view-all_5&amp;cid=V5VSIKF9EZSQ"><div class="" style="height: 150px;"><div class="" style="height: 150px; width: 150px;"><img class="" alt="HRX COMBAT Full Face Clear Visor Air ventilated ISI Marked Motorbike Helmet" src="https://rukminim1.flixcart.com/image/150/150/kz5vwy80/helmet/o/4/k/-original-imagb8azfdthjhqr.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/kz5vwy80/helmet/o/4/k/-original-imagb8azfdthjhqr.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/kz5vwy80/helmet/o/4/k/-original-imagb8azfdthjhqr.jpeg?q=70 1x"></div></div><div style="font-size: 14px;
+                font-weight: 500;
+                margin-top: 15px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: black;">Helmets</div><div style="color: #388e3c;
+                padding-top: 8px;">From 699</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop Now</div><div></div></a>
+            </div>
+            <div class="aditemholder">
+              <a title="Up to 70% Off" class="aditem" href="/books/fiction-books/pr?sid=bks%2Cwbi&amp;marketplace=FLIPKART&amp;p%5B%5D=facets.discount_range_v1%255B%255D%3D20%2525%2Bto%2B30%2525&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJVcCB0byA3MCUgb2ZmIl0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fSwidGl0bGUiOnsibXVsdGlWYWx1ZWRBdHRyaWJ1dGUiOnsia2V5IjoidGl0bGUiLCJpbmZlcmVuY2VUeXBlIjoiVElUTEUiLCJ2YWx1ZXMiOlsiRmljdGlvbiBCb29rcyJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX0sImhlcm9QaWQiOnsic2luZ2xlVmFsdWVBdHRyaWJ1dGUiOnsia2V5IjoiaGVyb1BpZCIsImluZmVyZW5jZVR5cGUiOiJQSUQiLCJ2YWx1ZSI6Ijk3ODkzOTAwODUxOTQiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19fX19&amp;fm=neo%2Fmerchandising&amp;iid=M_5a7aa6b5-9bb1-4d91-97e4-fd6125b62244_6.3XTX42J4OLWG&amp;ppt=None&amp;ppn=None&amp;ssid=1h3c5uzydzv1v08w1661355192447&amp;otracker=hp_omu_Beauty%252C%2BFood%252C%2BToys%2B%2526%2Bmore_6_6.dealCard.OMU_3XTX42J4OLWG_5&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Beauty%252C%2BFood%252C%2BToys%2B%2526%2Bmore_NA_dealCard_cc_6_NA_view-all_5&amp;cid=3XTX42J4OLWG"><div class="" style="height: 150px;"><div class="" style="height: 150px; width: 150px;"><img class="" alt="Fiction Books (Up to 70% off)" src="https://rukminim1.flixcart.com/image/150/150/ktn9pjk0/book/l/h/0/alchemist-original-imag6xfcqasgbqrm.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/ktn9pjk0/book/l/h/0/alchemist-original-imag6xfcqasgbqrm.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/ktn9pjk0/book/l/h/0/alchemist-original-imag6xfcqasgbqrm.jpeg?q=70 1x"></div></div><div style="font-size: 14px;
+                font-weight: 500;
+                margin-top: 15px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: black;">Fiction Books</div><div style="color: #388e3c;
+                padding-top: 8px;">Upto 70% off</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop now</div><div></div></a>
+            </div>
+            <div class="aditemholder">
+              <a title="Up to 70% Off" class="aditem" href="/pens-stationery/pr?sid=dgv&amp;p%5B%5D=facets.rating%255B%255D%3D4%25E2%2598%2585%2B%2526%2Babove&amp;hpid=B2Ku1G4aX7ZGf37AOgCozap7_Hsxr70nj65vMAAFKlc%3D&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJGcm9tIOKCuTQ5Il0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fSwiaGVyb1BpZCI6eyJzaW5nbGVWYWx1ZUF0dHJpYnV0ZSI6eyJrZXkiOiJoZXJvUGlkIiwiaW5mZXJlbmNlVHlwZSI6IlBJRCIsInZhbHVlIjoiTUFIRlJBVkdUNjhBUEpNTiIsInZhbHVlVHlwZSI6IlNJTkdMRV9WQUxVRUQifX0sInRpdGxlIjp7Im11bHRpVmFsdWVkQXR0cmlidXRlIjp7ImtleSI6InRpdGxlIiwiaW5mZXJlbmNlVHlwZSI6IlRJVExFIiwidmFsdWVzIjpbIlRvcCBTZWxsaW5nIFN0YXRpb25lcnkiXSwidmFsdWVUeXBlIjoiTVVMVElfVkFMVUVEIn19fX19&amp;fm=neo%2Fmerchandising&amp;iid=M_5a7aa6b5-9bb1-4d91-97e4-fd6125b62244_6.Q9RNZVMCPGND&amp;ppt=None&amp;ppn=None&amp;ssid=1h3c5uzydzv1v08w1661355192447&amp;otracker=hp_omu_Beauty%252C%2BFood%252C%2BToys%2B%2526%2Bmore_1_6.dealCard.OMU_Q9RNZVMCPGND_5&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Beauty%252C%2BFood%252C%2BToys%2B%2526%2Bmore_NA_dealCard_cc_1_NA_view-all_5&amp;cid=Q9RNZVMCPGND"><div class="" style="height: 150px;"><div class="" style="height: 150px; width: 150px;"><img class="" alt="FLAIR SRX pack of 50 Stand Ball Pen" src="https://rukminim1.flixcart.com/image/150/150/kx50gi80/pen/h/z/k/119766-flair-original-imag9nzubznagufg.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/kx50gi80/pen/h/z/k/119766-flair-original-imag9nzubznagufg.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/kx50gi80/pen/h/z/k/119766-flair-original-imag9nzubznagufg.jpeg?q=70 1x"></div></div><div style="font-size: 14px;
+                font-weight: 500;
+                margin-top: 15px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: black;">Top Selling Stationery</div><div style="color: #388e3c;
+                padding-top: 8px;">From Rs 49</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop Now</div><div></div></a>
+            </div>
+            <div class="aditemholder">
+              <a title="Up to 70% Off" class="aditem" href="/sports/cycling/cycles/pr?sid=abc%2Culv%2Cixt&amp;p%5B%5D=facets.fulfilled_by%255B%255D%3DPlus%2B%2528FAssured%2529&amp;p%5B%5D=facets.brand%255B%255D%3DMontra&amp;hpid=MahHXcDYo5IKUaFL6oza5Kp7_Hsxr70nj65vMAAFKlc%3D&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJGcm9tIOKCuSAyMSw2OTkiXSwidmFsdWVUeXBlIjoiTVVMVElfVkFMVUVEIn19LCJoZXJvUGlkIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6Imhlcm9QaWQiLCJpbmZlcmVuY2VUeXBlIjoiUElEIiwidmFsdWUiOiJDQ0VHRjNGWDNLUTlaQ05XIiwidmFsdWVUeXBlIjoiU0lOR0xFX1ZBTFVFRCJ9fSwidGl0bGUiOnsibXVsdGlWYWx1ZWRBdHRyaWJ1dGUiOnsia2V5IjoidGl0bGUiLCJpbmZlcmVuY2VUeXBlIjoiVElUTEUiLCJ2YWx1ZXMiOlsiUHJlbWl1bSBDeWNsZSJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX19fX0%3D&amp;fm=neo%2Fmerchandising&amp;iid=M_fa2903dc-2a75-426d-86ce-a27992adb819_7.3N9A2II51TDK&amp;ppt=None&amp;ppn=None&amp;ssid=4il7na42a2hl375s1661427951787&amp;otracker=hp_omu_Beauty%252C%2BFood%252C%2BToys%2B%2526%2Bmore_1_7.dealCard.OMU_3N9A2II51TDK_6&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Beauty%252C%2BFood%252C%2BToys%2B%2526%2Bmore_NA_dealCard_cc_1_NA_view-all_6&amp;cid=3N9A2II51TDK"><div class="" style="height: 150px;"><div class="" style="height: 150px; width: 150px;"><img class="" alt="Montra Torro 26 T Folding Bikes/Folding Cycle" src="https://rukminim1.flixcart.com/image/150/150/l3uhvgw0/cycle/n/z/c/torro-26t-26-16-montra-72-21-gear-original-imagevzncygdd8ah.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/l3uhvgw0/cycle/n/z/c/torro-26t-26-16-montra-72-21-gear-original-imagevzncygdd8ah.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/l3uhvgw0/cycle/n/z/c/torro-26t-26-16-montra-72-21-gear-original-imagevzncygdd8ah.jpeg?q=70 1x"></div></div><div style="font-size: 14px;
+                font-weight: 500;
+                margin-top: 15px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: black;">Premium Bicycles</div><div style="color: #388e3c;
+                padding-top: 8px;">From Rs 21,699</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop Now</div><div></div></a>
+            </div>
+            <div class="aditemholder">
+              <a title="Up to 70% Off" class="aditem" href="/musical-instruments/studiostage-equipment-accessories/microphone/pr?sid=ypu%2Calc%2C3d4&amp;p%5B%5D=facets.discount_range_v1%255B%255D%3D30%2525%2Bor%2Bmore&amp;fm=neo%2Fmerchandising&amp;iid=M_e627ea1b-d9b1-4edd-aa1d-b83b01ff8061_2_372UD5BXDFYS_MC.KZXMK6CTEATF&amp;cid=KZXMK6CTEATF&amp;p%5B%5D=facets.discount_range_v1%255B%255D%3D40%2525%2Bor%2Bmore&amp;p%5B%5D=facets.discount_range_v1%255B%255D%3D50%2525%2Bor%2Bmore&amp;p%5B%5D=facets.discount_range_v1%255B%255D%3D60%2525%2Bor%2Bmore&amp;p%5B%5D=facets.fulfilled_by%255B%255D%3DFlipkart%2BAssured&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJVcCB0byA3MCUgb2ZmIl0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fSwidGl0bGUiOnsibXVsdGlWYWx1ZWRBdHRyaWJ1dGUiOnsia2V5IjoidGl0bGUiLCJpbmZlcmVuY2VUeXBlIjoiVElUTEUiLCJ2YWx1ZXMiOlsiTWljcm9waG9uZXMiXSwidmFsdWVUeXBlIjoiTVVMVElfVkFMVUVEIn19LCJoZXJvUGlkIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6Imhlcm9QaWQiLCJpbmZlcmVuY2VUeXBlIjoiUElEIiwidmFsdWUiOiJNSUNGVVQ1Q0JSM1FXRDlOIiwidmFsdWVUeXBlIjoiU0lOR0xFX1ZBTFVFRCJ9fX19fQ%3D%3D&amp;fm=neo%2Fmerchandising&amp;iid=M_fa2903dc-2a75-426d-86ce-a27992adb819_7.SFY86SUVKQO2&amp;ppt=None&amp;ppn=None&amp;ssid=4il7na42a2hl375s1661427951787&amp;otracker=hp_omu_Beauty%252C%2BFood%252C%2BToys%2B%2526%2Bmore_3_7.dealCard.OMU_SFY86SUVKQO2_6&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Beauty%252C%2BFood%252C%2BToys%2B%2526%2Bmore_NA_dealCard_cc_3_NA_view-all_6&amp;cid=SFY86SUVKQO2"><div class="" style="height: 150px;"><div class="" style="height: 150px; width: 150px;"><img class="" alt="Microphones (Up to 70% off)" src="https://rukminim1.flixcart.com/image/150/150/kbtp0280/microphone/v/z/n/kluzie-3-5mm-clip-microphone-for-youtube-tik-tok-collar-mike-for-original-imaft2qgfy4xcd7p.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/kbtp0280/microphone/v/z/n/kluzie-3-5mm-clip-microphone-for-youtube-tik-tok-collar-mike-for-original-imaft2qgfy4xcd7p.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/kbtp0280/microphone/v/z/n/kluzie-3-5mm-clip-microphone-for-youtube-tik-tok-collar-mike-for-original-imaft2qgfy4xcd7p.jpeg?q=70 1x"></div></div><div style="font-size: 14px;
+                font-weight: 500;
+                margin-top: 15px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: black;">Studio & Stage Equpment</div><div style="color: #388e3c;
+                padding-top: 8px;">From Rs 10,000</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop Now</div><div></div></a>
+            </div>
+            <div class="aditemholder">
+              <a title="Up to 70% Off" class="aditem" href="/all/~cs-rp2pp3y30g/pr?sid=all&amp;collection-tab-name=Treadmill-Exercise+Bikes-DT&amp;hpid=nE8Z_QMpm9QBj5eoVUIwUap7_Hsxr70nj65vMAAFKlc%3D&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJVcCB0byA3MCUgT2ZmIl0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fSwiaGVyb1BpZCI6eyJzaW5nbGVWYWx1ZUF0dHJpYnV0ZSI6eyJrZXkiOiJoZXJvUGlkIiwiaW5mZXJlbmNlVHlwZSI6IlBJRCIsInZhbHVlIjoiRVhCRlpQOFRCV1pIRUpHSyIsInZhbHVlVHlwZSI6IlNJTkdMRV9WQUxVRUQifX0sInRpdGxlIjp7Im11bHRpVmFsdWVkQXR0cmlidXRlIjp7ImtleSI6InRpdGxlIiwiaW5mZXJlbmNlVHlwZSI6IlRJVExFIiwidmFsdWVzIjpbIlRyZWFkbWlsbCwgRXhlcmNpc2UgQmlrZXMgJiBNb3JlIl0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fX19fQ%3D%3D&amp;fm=neo%2Fmerchandising&amp;iid=M_fa2903dc-2a75-426d-86ce-a27992adb819_7.PZYMKW6PFJ4Q&amp;ppt=None&amp;ppn=None&amp;ssid=4il7na42a2hl375s1661427951787&amp;otracker=hp_omu_Beauty%252C%2BFood%252C%2BToys%2B%2526%2Bmore_5_7.dealCard.OMU_PZYMKW6PFJ4Q_6&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Beauty%252C%2BFood%252C%2BToys%2B%2526%2Bmore_NA_dealCard_cc_5_NA_view-all_6&amp;cid=PZYMKW6PFJ4Q"><div class="" style="height: 150px;"><div class="" style="height: 150px; width: 150px;"><img class="" alt="FITKIT FT098 Steel Motorized/FT98 Steel Motorized Treadmill" src="https://rukminim1.flixcart.com/image/150/150/kdj4xow0/treadmill/b/g/c/ft098-steel-motorized-ft98-steel-motorized-motorized-fitkit-original-imafuerskytashcz.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/kdj4xow0/treadmill/b/g/c/ft098-steel-motorized-ft98-steel-motorized-motorized-fitkit-original-imafuerskytashcz.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/kdj4xow0/treadmill/b/g/c/ft098-steel-motorized-ft98-steel-motorized-motorized-fitkit-original-imafuerskytashcz.jpeg?q=70 1x"></div></div><div style="font-size: 14px;
+                font-weight: 500;
+                margin-top: 15px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: black;">Workout Equipment</div><div style="color: #388e3c;
+                padding-top: 8px;">Upto 60% off</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop Now</div><div></div></a>
+            </div>
+            <div class="aditemholder">
+              <a title="Up to 70% Off" class="aditem" href="/musical-instruments/keys-synthesizers/musical-keyboards/pr?sid=ypu%2Cnvg%2Cxqg&amp;p%5B%5D=facets.discount_range_v1%255B%255D%3D30%2525%2Bor%2Bmore&amp;p%5B%5D=facets.discount_range_v1%255B%255D%3D40%2525%2Bor%2Bmore&amp;p%5B%5D=facets.discount_range_v1%255B%255D%3D20%2525%2Bor%2Bmore&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJ1cCB0byA3MCUgb2ZmIl0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fSwidGl0bGUiOnsibXVsdGlWYWx1ZWRBdHRyaWJ1dGUiOnsia2V5IjoidGl0bGUiLCJpbmZlcmVuY2VUeXBlIjoiVElUTEUiLCJ2YWx1ZXMiOlsiTXVzaWNhbCBLZXlib2FyZHMiXSwidmFsdWVUeXBlIjoiTVVMVElfVkFMVUVEIn19LCJoZXJvUGlkIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6Imhlcm9QaWQiLCJpbmZlcmVuY2VUeXBlIjoiUElEIiwidmFsdWUiOiJNS0RGVVpaM0RHUlFSSkhIIiwidmFsdWVUeXBlIjoiU0lOR0xFX1ZBTFVFRCJ9fX19fQ%3D%3D&amp;fm=neo%2Fmerchandising&amp;iid=M_fa2903dc-2a75-426d-86ce-a27992adb819_7.U9SEHROSNPLH&amp;ppt=None&amp;ppn=None&amp;ssid=4il7na42a2hl375s1661427951787&amp;otracker=hp_omu_Beauty%252C%2BFood%252C%2BToys%2B%2526%2Bmore_6_7.dealCard.OMU_U9SEHROSNPLH_6&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Beauty%252C%2BFood%252C%2BToys%2B%2526%2Bmore_NA_dealCard_cc_6_NA_view-all_6&amp;cid=U9SEHROSNPLH"><div class="" style="height: 150px;"><div class="" style="height: 150px; width: 150px;"><img class="" alt="Musical Keyboards (up to 70% off)" src="https://rukminim1.flixcart.com/image/150/150/kebpqq80/musical-keyboard/j/h/h/37-keys-nj-fashion-original-imafvyhrjeuah2ge.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/kebpqq80/musical-keyboard/j/h/h/37-keys-nj-fashion-original-imafvyhrjeuah2ge.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/kebpqq80/musical-keyboard/j/h/h/37-keys-nj-fashion-original-imafvyhrjeuah2ge.jpeg?q=70 1x"></div></div><div style="font-size: 14px;
+                font-weight: 500;
+                margin-top: 15px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: black;">Musical Instruments</div><div style="color: #388e3c;
+                padding-top: 8px;">From Rs 5000</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop Now</div><div></div></a>
+            </div>
+          </div> 
+      </div> 
+    </div>
+  </div>
+
+ <!-- Each of these divs holds a row of products -->
+  <div class="productrowcontainer">
+    <div class="productrowholder">
+        <div class="adheadbody">
+          <div class="adheading">
+            <b><h2>Best of Electronics</h2></b>
+            <h3>Best of Electronics</h3>
+          </div>
+          <hr />
+          <div class = "adbody">
+            <div class = "aditemholder">
+              <a title="Up to 70% Off" class="aditem" href="/6bo/b5g/~cs-98ahx3r3js/pr?sid=6bo%2Cb5g&amp;collection-tab-name=Intel+12th+Gen&amp;hpid=UPHqjCdQxG0yyQKIoSNbqqp7_Hsxr70nj65vMAAFKlc%3D&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJGcm9tIOKCuTQ3LDk5MCJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX0sImhlcm9QaWQiOnsic2luZ2xlVmFsdWVBdHRyaWJ1dGUiOnsia2V5IjoiaGVyb1BpZCIsImluZmVyZW5jZVR5cGUiOiJQSUQiLCJ2YWx1ZSI6IkNPTUdDRzJHRVJHVkpWQUciLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19LCJ0aXRsZSI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ0aXRsZSIsImluZmVyZW5jZVR5cGUiOiJUSVRMRSIsInZhbHVlcyI6WyIxMnRoIEdlbiBMYXB0b3BzIl0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fX19fQ%3D%3D&amp;fm=neo%2Fmerchandising&amp;iid=M_fa2903dc-2a75-426d-86ce-a27992adb819_3.96TCV7E0HFS8&amp;ppt=None&amp;ppn=None&amp;ssid=4il7na42a2hl375s1661427951787&amp;otracker=hp_omu_Best%2Bof%2BElectronics_1_3.dealCard.OMU_96TCV7E0HFS8_3&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Best%2Bof%2BElectronics_NA_dealCard_cc_1_NA_view-all_3&amp;cid=96TCV7E0HFS8"><div class="" style="height: 150px;"><div class="" style="height: 150px; width: 150px;"><img class="" alt="MSI Raider GE66 Core i7 12th Gen - (16 GB/1 TB SSD/Windows 11 Home/8 GB Graphics/NVIDIA GeForce RTX 3070 Ti) Raider GE66 12UGS-096IN Gaming Laptop" src="https://rukminim1.flixcart.com/image/150/150/kyag87k0/computer/7/r/u/raider-ge66-12ugs-gaming-laptop-msi-original-imagakb9zw7gqzcm.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/kyag87k0/computer/7/r/u/raider-ge66-12ugs-gaming-laptop-msi-original-imagakb9zw7gqzcm.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/kyag87k0/computer/7/r/u/raider-ge66-12ugs-gaming-laptop-msi-original-imagakb9zw7gqzcm.jpeg?q=70 1x"></div></div><div style="font-size: 14px;
+                font-weight: 500;
+                margin-top: 15px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: black;">Gaming Laptops</div><div style="color: #388e3c;
+                padding-top: 8px;">Up to 70% Off</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop Now</div><div></div></a>
+              </div>
+              <div class = "aditemholder">
+            <a title="Up to 70% Off" class="aditem" href="/cameras/dslr-mirrorless/pr?sid=jek%2Cp31%2Ctrv&amp;p%5B%5D=facets.fulfilled_by%255B%255D%3DFlipkart%2BAssured&amp;p%5B%5D=facets.type%255B%255D%3DMirrorless&amp;param=179&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJTaG9wIE5vdyEiXSwidmFsdWVUeXBlIjoiTVVMVElfVkFMVUVEIn19LCJ0aXRsZSI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ0aXRsZSIsImluZmVyZW5jZVR5cGUiOiJUSVRMRSIsInZhbHVlcyI6WyJUb3AgTWlycm9ybGVzcyBDYW1lcmFzIl0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fSwiaGVyb1BpZCI6eyJzaW5nbGVWYWx1ZUF0dHJpYnV0ZSI6eyJrZXkiOiJoZXJvUGlkIiwiaW5mZXJlbmNlVHlwZSI6IlBJRCIsInZhbHVlIjoiRExMRjZRWlBOS1RRTVM4SiIsInZhbHVlVHlwZSI6IlNJTkdMRV9WQUxVRUQifX19fX0%3D&amp;fm=neo%2Fmerchandising&amp;iid=M_fa2903dc-2a75-426d-86ce-a27992adb819_3.Q5LU1U8PHMK6&amp;ppt=None&amp;ppn=None&amp;ssid=4il7na42a2hl375s1661427951787&amp;otracker=hp_omu_Best%2Bof%2BElectronics_2_3.dealCard.OMU_Q5LU1U8PHMK6_3&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Best%2Bof%2BElectronics_NA_dealCard_cc_2_NA_view-all_3&amp;cid=Q5LU1U8PHMK6"><div class="" style="height: 150px;"><div class="" style="height: 150px; width: 150px;"><img class="" alt="Top Mirrorless Cameras (Shop Now!)" src="https://rukminim1.flixcart.com/image/150/150/l5jxt3k0/dslr-camera/m/n/a/-original-imagg7hsggshhwbz.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/l5jxt3k0/dslr-camera/m/n/a/-original-imagg7hsggshhwbz.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/l5jxt3k0/dslr-camera/m/n/a/-original-imagg7hsggshhwbz.jpeg?q=70 1x"></div></div><div style="font-size: 14px;
+              font-weight: 500;
+              margin-top: 15px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              color: black;">Cameras</div><div style="color: #388e3c;
+              padding-top: 8px;">Up to 70% Off</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop Now</div><div></div></a>
+            </div>
+            <div class = "aditemholder">
+            <a title="Up to 70% Off" class="aditem" href="/6bo/b5g/~cs-f9gzwp0619/pr?sid=6bo%2Cb5g&amp;collection-tab-name=Thin+and+Light&amp;hpid=7J_7f0Oi7RS5BVTOjJbQmqp7_Hsxr70nj65vMAAFKlc%3D&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJGcm9tIOKCuTE4LDk5MCJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX0sImhlcm9QaWQiOnsic2luZ2xlVmFsdWVBdHRyaWJ1dGUiOnsia2V5IjoiaGVyb1BpZCIsImluZmVyZW5jZVR5cGUiOiJQSUQiLCJ2YWx1ZSI6IkNPTUdHM1M5WFpWNFBXSEIiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19LCJ0aXRsZSI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ0aXRsZSIsImluZmVyZW5jZVR5cGUiOiJUSVRMRSIsInZhbHVlcyI6WyJUaGluIEFuZCBMaWdodCBMYXB0b3BzIl0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fX19fQ%3D%3D&amp;fm=neo%2Fmerchandising&amp;iid=M_fa2903dc-2a75-426d-86ce-a27992adb819_3.WWYT2WCAW87Y&amp;ppt=None&amp;ppn=None&amp;ssid=4il7na42a2hl375s1661427951787&amp;otracker=hp_omu_Best%2Bof%2BElectronics_3_3.dealCard.OMU_WWYT2WCAW87Y_3&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Best%2Bof%2BElectronics_NA_dealCard_cc_3_NA_view-all_3&amp;cid=WWYT2WCAW87Y"><div class="" style="height: 150px;"><div class="" style="height: 150px; width: 150px;"><img class="" alt="HP Pavilion Ryzen 5 Hexa Core 5500U - (16 GB/512 GB SSD/Windows 10 Home/2 GB Graphics) 14-ec0000AX Thin and Light Laptop" src="https://rukminim1.flixcart.com/image/150/150/ktketu80/computer/y/f/g/14-ec0007ax-thin-and-light-laptop-hp-original-imag6w28yf6vbvpy.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/ktketu80/computer/y/f/g/14-ec0007ax-thin-and-light-laptop-hp-original-imag6w28yf6vbvpy.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/ktketu80/computer/y/f/g/14-ec0007ax-thin-and-light-laptop-hp-original-imag6w28yf6vbvpy.jpeg?q=70 1x "></div></div><div style="font-size: 14px;
+              font-weight: 500;
+              margin-top: 15px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              color: black;">Business Laptops</div><div style="color: #388e3c;
+              padding-top: 8px;">Upto 70% off</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop now</div><div></div></a>
+            </div>
+            <div class = "aditemholder">
+            <a title="Up to 70% Off" class="aditem" href="/computers/monitors/pr?sid=6bo%2C9no&amp;fm=neo%2Fmerchandising&amp;iid=M_ce1a6f68-d7d2-4ae1-875c-0d0877d9a11f_2_372UD5BXDFYS_MC.ECL5SFI77NSY&amp;otracker1=hp_rich_navigation_PINNED_neo%2Fmerchandising_NA_NAV_EXPANDABLE_navigationCard_cc_3_L2_view-all&amp;cid=ECL5SFI77NSY&amp;p%5B%5D=facets.fulfilled_by%255B%255D%3DFlipkart%2BAssured&amp;p%5B%5D=facets.brand%255B%255D%3DViewSonic&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJGcm9tIOKCuTgwMDAiXSwidmFsdWVUeXBlIjoiTVVMVElfVkFMVUVEIn19LCJ0aXRsZSI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ0aXRsZSIsImluZmVyZW5jZVR5cGUiOiJUSVRMRSIsInZhbHVlcyI6WyJWaWV3U29uaWMgTW9uaXRvcnMiXSwidmFsdWVUeXBlIjoiTVVMVElfVkFMVUVEIn19LCJoZXJvUGlkIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6Imhlcm9QaWQiLCJpbmZlcmVuY2VUeXBlIjoiUElEIiwidmFsdWUiOiJNT05HODVBREhaTkhOQ0Q4IiwidmFsdWVUeXBlIjoiU0lOR0xFX1ZBTFVFRCJ9fX19fQ%3D%3D&amp;fm=neo%2Fmerchandising&amp;iid=M_fa2903dc-2a75-426d-86ce-a27992adb819_3.NOBMPKW1HQ7A&amp;ppt=None&amp;ppn=None&amp;ssid=4il7na42a2hl375s1661427951787&amp;otracker=hp_omu_Best%2Bof%2BElectronics_4_3.dealCard.OMU_NOBMPKW1HQ7A_3&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Best%2Bof%2BElectronics_NA_dealCard_cc_4_NA_view-all_3&amp;cid=NOBMPKW1HQ7A"><div class="" style="height: 150px;"><div class="" style="height: 150px; width: 150px;"><img class="" alt="ViewSonic Monitors (From ₹8000)" src="https://rukminim1.flixcart.com/image/150/150/l58iaa80/monitor/p/6/t/-original-imagfymyyt5chgvz.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/l58iaa80/monitor/p/6/t/-original-imagfymyyt5chgvz.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/l58iaa80/monitor/p/6/t/-original-imagfymyyt5chgvz.jpeg?q=70 1x"></div></div><div style="font-size: 14px;
+              font-weight: 500;
+              margin-top: 15px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              color: black;">Gaming PCs</div><div style="color: #388e3c;
+              padding-top: 8px;">Up to 70% Off</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop Now</div><div></div></a>
+            </div>
+            <div class = "aditemholder">
+              <a title="Up to 70% Off" class="aditem" href="/computers/computer-peripherals/printers-inks/printers/pr?sid=6bo%2Ctia%2Cffn%2Ct64&amp;fm=neo%2Fmerchandising&amp;iid=M_2731d14e-2583-4664-a065-6fc7ea504a6d_2_372UD5BXDFYS_MC.ES1XN5J8PT49&amp;otracker1=hp_rich_navigation_PINNED_neo%2Fmerchandising_NA_NAV_EXPANDABLE_navigationCard_cc_2_L2_view-all&amp;cid=ES1XN5J8PT49&amp;p%5B%5D=facets.fulfilled_by%255B%255D%3DFlipkart%2BAssured&amp;p%5B%5D=facets.brand%255B%255D%3DHP&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJGcm9tIOKCuTM5OTkiXSwidmFsdWVUeXBlIjoiTVVMVElfVkFMVUVEIn19LCJ0aXRsZSI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ0aXRsZSIsImluZmVyZW5jZVR5cGUiOiJUSVRMRSIsInZhbHVlcyI6WyJQcmludGVycyJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX0sImhlcm9QaWQiOnsic2luZ2xlVmFsdWVBdHRyaWJ1dGUiOnsia2V5IjoiaGVyb1BpZCIsImluZmVyZW5jZVR5cGUiOiJQSUQiLCJ2YWx1ZSI6IlBSTkRYSFpFNVI5SFVKSlkiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19fX19&amp;fm=neo%2Fmerchandising&amp;iid=M_fa2903dc-2a75-426d-86ce-a27992adb819_3.D54DFY00C5JD&amp;ppt=None&amp;ppn=None&amp;ssid=4il7na42a2hl375s1661427951787&amp;otracker=hp_omu_Best%2Bof%2BElectronics_5_3.dealCard.OMU_D54DFY00C5JD_3&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Best%2Bof%2BElectronics_NA_dealCard_cc_5_NA_view-all_3&amp;cid=D54DFY00C5JD"><div class="" style="height: 150px;"><div class="" style="height: 150px; width: 150px;"><img class="" alt="Printers (From ₹3999)" src="https://rukminim1.flixcart.com/image/150/150/printer/j/j/y/hp-laserjet-m1005-multifunction-original-imadxhzpeb9qbrfg.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/printer/j/j/y/hp-laserjet-m1005-multifunction-original-imadxhzpeb9qbrfg.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/printer/j/j/y/hp-laserjet-m1005-multifunction-original-imadxhzpeb9qbrfg.jpeg?q=70 1x"></div></div><div style="font-size: 14px;
+              font-weight: 500;
+              margin-top: 15px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              color: black;">Printers</div><div style="color: #388e3c;
+              padding-top: 8px;">Up to 70% Off</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop Now</div><div></div></a>
+            </div>
+            <div class = "aditemholder">
+              <a title="Up to 70% Off" class="aditem" href="/health-personal-care-appliances/~cs-ohllcqndsd/pr?sid=zlw&amp;collection-tab-name=Best+of+Women+Trimmers&amp;hpid=eoN7UDNvZNvIePCm7zzpHap7_Hsxr70nj65vMAAFKlc%3D&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJGcm9tIOKCuTc5OSJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX0sImhlcm9QaWQiOnsic2luZ2xlVmFsdWVBdHRyaWJ1dGUiOnsia2V5IjoiaGVyb1BpZCIsImluZmVyZW5jZVR5cGUiOiJQSUQiLCJ2YWx1ZSI6IlRNUkY5RVQ2SEpYQ0Y1OFciLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19LCJ0aXRsZSI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ0aXRsZSIsImluZmVyZW5jZVR5cGUiOiJUSVRMRSIsInZhbHVlcyI6WyJCZXN0IG9mIFdvbWVuIFRyaW1tZXJzIl0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fX19fQ%3D%3D&amp;fm=neo%2Fmerchandising&amp;iid=M_fa2903dc-2a75-426d-86ce-a27992adb819_3.TYZFY4DDML1D&amp;ppt=None&amp;ppn=None&amp;ssid=4il7na42a2hl375s1661427951787&amp;otracker=hp_omu_Best%2Bof%2BElectronics_6_3.dealCard.OMU_TYZFY4DDML1D_3&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Best%2Bof%2BElectronics_NA_dealCard_cc_6_NA_view-all_3&amp;cid=TYZFY4DDML1D"><div class="" style="height: 150px;"><div class="" style="height: 150px; width: 150px;"><img class="" alt="Veet Sensitive Touch Expert  Runtime: 45 min Trimmer for Women" src="https://rukminim1.flixcart.com/image/150/150/jwzabgw0/trimmer/y/4/r/sensitive-touch-expert-veet-original-imafhjh5ah7vf9zc.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/jwzabgw0/trimmer/y/4/r/sensitive-touch-expert-veet-original-imafhjh5ah7vf9zc.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/jwzabgw0/trimmer/y/4/r/sensitive-touch-expert-veet-original-imafhjh5ah7vf9zc.jpeg?q=70 1x"></div></div><div style="font-size: 14px;
+              font-weight: 500;
+              margin-top: 15px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              color: black;">Trimmers & Razors</div><div style="color: #388e3c;
+              padding-top: 8px;">Up to 70% Off</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop Now</div><div></div></a>
+            </div>
+            <div class = "aditemholder">
+              <a title="Up to 70% Off" class="aditem" href="/health-personal-care-appliances/~cs-5pmlt3813o/pr?sid=zlw&amp;collection-tab-name=Best+of+Hair+Dryers&amp;hpid=ykaudr-vM9cXBQ-KYvhUJap7_Hsxr70nj65vMAAFKlc%3D&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJGcm9tIOKCuTM5OSJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX0sImhlcm9QaWQiOnsic2luZ2xlVmFsdWVBdHRyaWJ1dGUiOnsia2V5IjoiaGVyb1BpZCIsImluZmVyZW5jZVR5cGUiOiJQSUQiLCJ2YWx1ZSI6IkhEUkZaSlNRQlVGTU5QU0UiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19LCJ0aXRsZSI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ0aXRsZSIsImluZmVyZW5jZVR5cGUiOiJUSVRMRSIsInZhbHVlcyI6WyJCZXN0IG9mIEhhaXIgRHJ5ZXJzIl0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fX19fQ%3D%3D&amp;fm=neo%2Fmerchandising&amp;iid=M_fa2903dc-2a75-426d-86ce-a27992adb819_3.VXQGYLXW75FQ&amp;ppt=None&amp;ppn=None&amp;ssid=4il7na42a2hl375s1661427951787&amp;otracker=hp_omu_Best%2Bof%2BElectronics_7_3.dealCard.OMU_VXQGYLXW75FQ_3&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Best%2Bof%2BElectronics_NA_dealCard_cc_7_NA_view-all_3&amp;cid=VXQGYLXW75FQ"><div class="" style="height: 150px;"><div class="" style="height: 150px; width: 150px;"><img class="" alt="Philips HP8100/46 Hair Dryer" src="https://rukminim1.flixcart.com/image/150/150/hair-dryer/c/t/g/philips-hp8100-46-original-imaemymzuxrnzfjb.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/hair-dryer/c/t/g/philips-hp8100-46-original-imaemymzuxrnzfjb.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/hair-dryer/c/t/g/philips-hp8100-46-original-imaemymzuxrnzfjb.jpeg?q=70 1x"></div></div><div style="font-size: 14px;
+              font-weight: 500;
+              margin-top: 15px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              color: black;">Hairdryers</div><div style="color: #388e3c;
+              padding-top: 8px;">Up to 70% Off</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop Now</div><div></div></a>
+              </div>
+              <div class = "aditemholder">
+              <a title="Up to 70% Off" class="aditem" href="/6bo/b5g/~cs-px1g8mwmts/pr?sid=6bo%2Cb5g&amp;collection-tab-name=Core+i3+Laptops&amp;hpid=3em5ksC-SL-dUrTANtd82qp7_Hsxr70nj65vMAAFKlc%3D&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJGcm9tIOKCuTI5LDk5MCJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX0sImhlcm9QaWQiOnsic2luZ2xlVmFsdWVBdHRyaWJ1dGUiOnsia2V5IjoiaGVyb1BpZCIsImluZmVyZW5jZVR5cGUiOiJQSUQiLCJ2YWx1ZSI6IkNPTUdFSFA1S0g3Q0NQVkgiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19LCJ0aXRsZSI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ0aXRsZSIsImluZmVyZW5jZVR5cGUiOiJUSVRMRSIsInZhbHVlcyI6WyJDb3JlIGkzIExhcHRvcHMiXSwidmFsdWVUeXBlIjoiTVVMVElfVkFMVUVEIn19fX19&amp;fm=neo%2Fmerchandising&amp;iid=M_fa2903dc-2a75-426d-86ce-a27992adb819_3.GL631TJ9VLMF&amp;ppt=None&amp;ppn=None&amp;ssid=4il7na42a2hl375s1661427951787&amp;otracker=hp_omu_Best%2Bof%2BElectronics_8_3.dealCard.OMU_GL631TJ9VLMF_3&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Best%2Bof%2BElectronics_NA_dealCard_cc_8_NA_view-all_3&amp;cid=GL631TJ9VLMF"><div class="" style="height: 150px;"><div class="" style="height: 150px; width: 150px;"><img class="" alt="ASUS Vivobook 14 Core i3 10th Gen - (8 GB/1 TB HDD/Windows 10 Home) X415FA-BV311T Laptop" src="https://rukminim1.flixcart.com/image/150/150/ks4yz680/computer/q/5/z/x409fa-ek617t-thin-and-light-laptop-asus-original-imag5rwhrgjtgkyq.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/ks4yz680/computer/q/5/z/x409fa-ek617t-thin-and-light-laptop-asus-original-imag5rwhrgjtgkyq.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/ks4yz680/computer/q/5/z/x409fa-ek617t-thin-and-light-laptop-asus-original-imag5rwhrgjtgkyq.jpeg?q=70 1x"></div></div><div style="font-size: 14px;
+              font-weight: 500;
+              margin-top: 15px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              color: black;">Student Laptops</div><div style="color: #388e3c;
+              padding-top: 8px;">Up to 70% Off</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop Now</div><div></div></a>
+              </div>  
+        </div> 
+      </div> 
+    </div>
+  </div>
+
+   <!-- Each of these divs holds a row of products -->
+  <div class="productrowcontainer">
+    <div class="productrowholder">
+        <div class="adheadbody">
+          <div class="adheading">
+            <b><h2>Grooming, Books, Auto &amp; More</h2></b>
+            <h3>Grooming, Books, Auto &amp; More</h3>
+          </div>
+          <hr />
+          <div class = "adbody">
+          <div class="aditemholder">
+            <a title="Up to 70% Off" class="aditem" href="/musical-instruments/string-instruments/pr?sid=ypu%2Cujd&amp;p%5B%5D=facets.serviceability%5B%5D%3Dtrue&amp;hpid=B-XAf3E_DShXt5jns5U3Map7_Hsxr70nj65vMAAFKlc%3D&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJVcCB0byA3MCUgT2ZmIl0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fSwiaGVyb1BpZCI6eyJzaW5nbGVWYWx1ZUF0dHJpYnV0ZSI6eyJrZXkiOiJoZXJvUGlkIiwiaW5mZXJlbmNlVHlwZSI6IlBJRCIsInZhbHVlIjoiQUNHRkdZSFU5VEZLWVRGQSIsInZhbHVlVHlwZSI6IlNJTkdMRV9WQUxVRUQifX0sInRpdGxlIjp7Im11bHRpVmFsdWVkQXR0cmlidXRlIjp7ImtleSI6InRpdGxlIiwiaW5mZXJlbmNlVHlwZSI6IlRJVExFIiwidmFsdWVzIjpbIlN0cmluZyBJbnN0cnVtZW50cyJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX19fX0%3D&amp;fm=neo%2Fmerchandising&amp;iid=M_e5292aa9-e533-4803-8f7d-211ffbd48ce3_23.9AE4SAPK5A3S&amp;ppt=hp&amp;ppn=homepage&amp;ssid=86ewpr9717ksfaps1661405177638&amp;otracker=hp_omu_Grooming%252C%2BBooks%252C%2BAuto%2B%2526%2Bmore_1_23.dealCard.OMU_9AE4SAPK5A3S_9&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Grooming%252C%2BBooks%252C%2BAuto%2B%2526%2Bmore_NA_dealCard_cc_1_NA_view-all_9&amp;cid=9AE4SAPK5A3S"><div class="" style="height: 150px;"><div class="" style="height: 150px; min-width: 0px;"><img class="" alt="Jixing DD-380C-BLK Linden Wood Acoustic Guitar" src="https://rukminim1.flixcart.com/image/150/150/acoustic-guitar/e/y/y/dd-380c-blk-jixing-original-imaeff94e9tczafp.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/acoustic-guitar/e/y/y/dd-380c-blk-jixing-original-imaeff94e9tczafp.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/acoustic-guitar/e/y/y/dd-380c-blk-jixing-original-imaeff94e9tczafp.jpeg?q=70 1x"></div></div><div style="font-size: 14px;
+              font-weight: 500;
+              margin-top: 15px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              color: black;">String Instruments</div><div style="color: #388e3c;
+              padding-top: 8px;">Upto 70% off</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop Now</div><div></div></a>
+          </div>
+          <div class="aditemholder">
+            <a title="Up to 70% Off" class="aditem" href="/sports/cycling/cycling-accessories/pr?sid=abc%2Culv%2C4nj&amp;p%5B%5D=facets.fulfilled_by%255B%255D%3DPlus%2B%2528FAssured%2529&amp;hpid=bSF-gGlcWqyxAY09fFHRNap7_Hsxr70nj65vMAAFKlc%3D&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJGcm9tIOKCuTEyNSJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX0sImhlcm9QaWQiOnsic2luZ2xlVmFsdWVBdHRyaWJ1dGUiOnsia2V5IjoiaGVyb1BpZCIsImluZmVyZW5jZVR5cGUiOiJQSUQiLCJ2YWx1ZSI6IlNHRUY2WkJCWlFVREhWRzMiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19LCJ0aXRsZSI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ0aXRsZSIsImluZmVyZW5jZVR5cGUiOiJUSVRMRSIsInZhbHVlcyI6WyJDeWNsZXMgQWNjZXNpb3JpZXMiXSwidmFsdWVUeXBlIjoiTVVMVElfVkFMVUVEIn19fX19&amp;fm=neo%2Fmerchandising&amp;iid=M_e5292aa9-e533-4803-8f7d-211ffbd48ce3_23.FLTRMTCBHVZT&amp;ppt=hp&amp;ppn=homepage&amp;ssid=86ewpr9717ksfaps1661405177638&amp;otracker=hp_omu_Grooming%252C%2BBooks%252C%2BAuto%2B%2526%2Bmore_2_23.dealCard.OMU_FLTRMTCBHVZT_9&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Grooming%252C%2BBooks%252C%2BAuto%2B%2526%2Bmore_NA_dealCard_cc_2_NA_view-all_9&amp;cid=FLTRMTCBHVZT"><div class="" style="height: 150px;"><div class="" style="height: 150px; min-width: 0px;"><img class="" alt="DARK HORSE Imported Bicycle Rear Light 5 LED USB Rechargeable Waterproof LED Rear Break Light" src="https://rukminim1.flixcart.com/image/150/150/light/h/9/h/imported-bicycle-rear-light-5-led-usb-rechargeable-waterproof-original-imaeq7hj3gppgcxz.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/light/h/9/h/imported-bicycle-rear-light-5-led-usb-rechargeable-waterproof-original-imaeq7hj3gppgcxz.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/light/h/9/h/imported-bicycle-rear-light-5-led-usb-rechargeable-waterproof-original-imaeq7hj3gppgcxz.jpeg?q=70 1x"></div></div><div style="font-size: 14px;
+              font-weight: 500;
+              margin-top: 15px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              color: black;">Cycles Accesories</div><div style="color: #388e3c;
+              padding-top: 8px;">From Rs 125</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop Now</div><div></div></a>
+            
+          </div>
+          <div class="aditemholder">
+            <a title="Up to 70% Off" class="aditem" href="/toys/musical-toys/pr?sid=tng%2Cdcr&amp;p%5B%5D=facets.price_range.from%3DMin&amp;p%5B%5D=facets.price_range.to%3D199&amp;hpid=Aj6vFh3Yz4g3FuDwd-H046p7_Hsxr70nj65vMAAFKlc%3D&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJVbmRlciAxOTkiXSwidmFsdWVUeXBlIjoiTVVMVElfVkFMVUVEIn19LCJoZXJvUGlkIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6Imhlcm9QaWQiLCJpbmZlcmVuY2VUeXBlIjoiUElEIiwidmFsdWUiOiJNVFlHQTVKS0RSOFMzWDlIIiwidmFsdWVUeXBlIjoiU0lOR0xFX1ZBTFVFRCJ9fSwidGl0bGUiOnsibXVsdGlWYWx1ZWRBdHRyaWJ1dGUiOnsia2V5IjoidGl0bGUiLCJpbmZlcmVuY2VUeXBlIjoiVElUTEUiLCJ2YWx1ZXMiOlsiTXVzaWNhbCBUb3lzIl0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fX19fQ%3D%3D&amp;fm=neo%2Fmerchandising&amp;iid=M_e5292aa9-e533-4803-8f7d-211ffbd48ce3_23.EQIZS7PWV3Z7&amp;ppt=hp&amp;ppn=homepage&amp;ssid=86ewpr9717ksfaps1661405177638&amp;otracker=hp_omu_Grooming%252C%2BBooks%252C%2BAuto%2B%2526%2Bmore_3_23.dealCard.OMU_EQIZS7PWV3Z7_9&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Grooming%252C%2BBooks%252C%2BAuto%2B%2526%2Bmore_NA_dealCard_cc_3_NA_view-all_9&amp;cid=EQIZS7PWV3Z7"><div class="" style="height: 150px;"><div class="" style="height: 150px; min-width: 0px;"><img class="" alt="Madrigal Xylophone Guitar Wooden (5 Nodes) | Kids First Musical Sound Instrument Toy | Babies Toddlers 6 Months + (Multicolor)" src="https://rukminim1.flixcart.com/image/150/150/kiqbma80-0/musical-toy/s/k/b/xylophone-guitar-wooden-kids-first-musical-sound-instrument-toy-original-imafyfszcjkjcwwz.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/kiqbma80-0/musical-toy/s/k/b/xylophone-guitar-wooden-kids-first-musical-sound-instrument-toy-original-imafyfszcjkjcwwz.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/kiqbma80-0/musical-toy/s/k/b/xylophone-guitar-wooden-kids-first-musical-sound-instrument-toy-original-imafyfszcjkjcwwz.jpeg?q=70 1x"></div></div><div style="font-size: 14px;
+              font-weight: 500;
+              margin-top: 15px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              color: black;">Musical Toys</div><div style="color: #388e3c;
+              padding-top: 8px;">Under 199</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop Now</div><div></div></a>
+            
+          </div>
+          <div class="aditemholder">
+            <a title="Up to 70% Off" class="aditem" href="/toys/indoor-games/pr?sid=tng%2Cgfv&amp;p%5B%5D=facets.price_range.from%3DMin&amp;p%5B%5D=facets.price_range.to%3D500000&amp;hpid=JPO8oBU8-DB7AHuAkSqwRKp7_Hsxr70nj65vMAAFKlc%3D&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJGcm9tIOKCuSA3OSJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX0sImhlcm9QaWQiOnsic2luZ2xlVmFsdWVBdHRyaWJ1dGUiOnsia2V5IjoiaGVyb1BpZCIsImluZmVyZW5jZVR5cGUiOiJQSUQiLCJ2YWx1ZSI6IkJER0dCWFRaVlZZWEQ5VlUiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19LCJ0aXRsZSI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ0aXRsZSIsImluZmVyZW5jZVR5cGUiOiJUSVRMRSIsInZhbHVlcyI6WyJQdXp6bGVzICYgQ3ViZXMiXSwidmFsdWVUeXBlIjoiTVVMVElfVkFMVUVEIn19fX19&amp;fm=neo%2Fmerchandising&amp;iid=M_e5292aa9-e533-4803-8f7d-211ffbd48ce3_23.6V87ZA8OJTXA&amp;ppt=hp&amp;ppn=homepage&amp;ssid=86ewpr9717ksfaps1661405177638&amp;otracker=hp_omu_Grooming%252C%2BBooks%252C%2BAuto%2B%2526%2Bmore_4_23.dealCard.OMU_6V87ZA8OJTXA_9&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Grooming%252C%2BBooks%252C%2BAuto%2B%2526%2Bmore_NA_dealCard_cc_4_NA_view-all_9&amp;cid=6V87ZA8OJTXA"><div class="" style="height: 150px;"><div class="" style="height: 150px; min-width: 0px;"><img class="" alt="Webby Wooden Earth Jigsaw Puzzle, 60 Pcs" src="https://rukminim1.flixcart.com/image/150/150/kl5hh8w0/puzzle/g/n/g/60-wooden-earth-jigsaw-puzzle-60-pcs-webby-original-imagyc8hsdztzdzb.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/kl5hh8w0/puzzle/g/n/g/60-wooden-earth-jigsaw-puzzle-60-pcs-webby-original-imagyc8hsdztzdzb.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/kl5hh8w0/puzzle/g/n/g/60-wooden-earth-jigsaw-puzzle-60-pcs-webby-original-imagyc8hsdztzdzb.jpeg?q=70 1x"></div></div><div style="font-size: 14px;
+              font-weight: 500;
+              margin-top: 15px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              color: black;">Puzzles and Cubes</div><div style="color: #388e3c;
+              padding-top: 8px;">From Rs 79</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop Now</div><div></div></a>
+            
+          </div>
+          <div class="aditemholder">
+            <a title="Up to 70% Off" class="aditem" href="/beauty-and-grooming/makeup/pr?sid=g9b%2Cffi&amp;p%5B%5D=facets.fulfilled_by%255B%255D%3DPlus%2B%2528FAssured%2529&amp;hpid=_9gFVIapst46MVlGqfuQ86p7_Hsxr70nj65vMAAFKlc%3D&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJVcHRvIDYwJSBPZmYiXSwidmFsdWVUeXBlIjoiTVVMVElfVkFMVUVEIn19LCJoZXJvUGlkIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6Imhlcm9QaWQiLCJpbmZlcmVuY2VUeXBlIjoiUElEIiwidmFsdWUiOiJLSkxGN1ZORlAyS1hVQ1ZRIiwidmFsdWVUeXBlIjoiU0lOR0xFX1ZBTFVFRCJ9fSwidGl0bGUiOnsibXVsdGlWYWx1ZWRBdHRyaWJ1dGUiOnsia2V5IjoidGl0bGUiLCJpbmZlcmVuY2VUeXBlIjoiVElUTEUiLCJ2YWx1ZXMiOlsiTWFrZXVwIEVzc2VudGlhbHMiXSwidmFsdWVUeXBlIjoiTVVMVElfVkFMVUVEIn19fX19&amp;fm=neo%2Fmerchandising&amp;iid=M_e5292aa9-e533-4803-8f7d-211ffbd48ce3_23.MV9Z88EKX513&amp;ppt=hp&amp;ppn=homepage&amp;ssid=86ewpr9717ksfaps1661405177638&amp;otracker=hp_omu_Grooming%252C%2BBooks%252C%2BAuto%2B%2526%2Bmore_5_23.dealCard.OMU_MV9Z88EKX513_9&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Grooming%252C%2BBooks%252C%2BAuto%2B%2526%2Bmore_NA_dealCard_cc_5_NA_view-all_9&amp;cid=MV9Z88EKX513"><div class="" style="height: 150px;"><div class="" style="height: 150px; min-width: 0px;"><img class="" alt="MAYBELLINE NEW YORK Sara's Favorite Sensational Liquid Matte Pack of 3 - Touch of Spice, Nude Nuance, Red Serenade" src="https://rukminim1.flixcart.com/image/150/150/kql8sy80/lipstick/7/m/y/21-sara-s-favorite-sensational-liquid-matte-pack-of-3-touch-of-original-imag4kgnbmynydnw.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/kql8sy80/lipstick/7/m/y/21-sara-s-favorite-sensational-liquid-matte-pack-of-3-touch-of-original-imag4kgnbmynydnw.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/kql8sy80/lipstick/7/m/y/21-sara-s-favorite-sensational-liquid-matte-pack-of-3-touch-of-original-imag4kgnbmynydnw.jpeg?q=70 1x"></div></div><div style="font-size: 14px;
+              font-weight: 500;
+              margin-top: 15px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              color: black;">Makeup Essentials</div><div style="color: #388e3c;
+              padding-top: 8px;">Upto 60% off</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop Now</div><div></div></a>
+          </div>
+          <div class="aditemholder">
+            <a title="Up to 70% Off" class="aditem" href="/books/fiction-books/pr?sid=bks%2Cwbi&amp;marketplace=FLIPKART&amp;p%5B%5D=facets.discount_range_v1%255B%255D%3D20%2525%2Bto%2B30%2525&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJVcCB0byA3MCUgb2ZmIl0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fSwidGl0bGUiOnsibXVsdGlWYWx1ZWRBdHRyaWJ1dGUiOnsia2V5IjoidGl0bGUiLCJpbmZlcmVuY2VUeXBlIjoiVElUTEUiLCJ2YWx1ZXMiOlsiRmljdGlvbiBCb29rcyJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX0sImhlcm9QaWQiOnsic2luZ2xlVmFsdWVBdHRyaWJ1dGUiOnsia2V5IjoiaGVyb1BpZCIsImluZmVyZW5jZVR5cGUiOiJQSUQiLCJ2YWx1ZSI6Ijk3ODkzOTAwODUxOTQiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19fX19&amp;fm=neo%2Fmerchandising&amp;iid=M_5a7aa6b5-9bb1-4d91-97e4-fd6125b62244_6.3XTX42J4OLWG&amp;ppt=None&amp;ppn=None&amp;ssid=1h3c5uzydzv1v08w1661355192447&amp;otracker=hp_omu_Beauty%252C%2BFood%252C%2BToys%2B%2526%2Bmore_6_6.dealCard.OMU_3XTX42J4OLWG_5&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Beauty%252C%2BFood%252C%2BToys%2B%2526%2Bmore_NA_dealCard_cc_6_NA_view-all_5&amp;cid=3XTX42J4OLWG"><div class="" style="height: 150px;"><div class="" style="height: 150px; min-width: 0px;"><img class="" alt="Fiction Books (Up to 70% off)" src="https://rukminim1.flixcart.com/image/150/150/ktn9pjk0/book/l/h/0/alchemist-original-imag6xfcqasgbqrm.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/ktn9pjk0/book/l/h/0/alchemist-original-imag6xfcqasgbqrm.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/ktn9pjk0/book/l/h/0/alchemist-original-imag6xfcqasgbqrm.jpeg?q=70 1x"></div></div><div style="font-size: 14px;
+              font-weight: 500;
+              margin-top: 15px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              color: black;">Fiction Books</div><div style="color: #388e3c;
+              padding-top: 8px;">Upto 70% off</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop now</div><div></div></a>
+          </div>
+          <div class="aditemholder">
+            <a title="Up to 70% Off" class="aditem" href="/food-products/food-spreads/pr?sid=eat%2Cxhv&amp;p%5B%5D=facets.fulfilled_by%255B%255D%3DPlus%2B%2528FAssured%2529&amp;param=3787&amp;hpid=9V0SxtV29n-BM8--0trrxKp7_Hsxr70nj65vMAAFKlc%3D&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJVcHRvIDc1JSBPZmYiXSwidmFsdWVUeXBlIjoiTVVMVElfVkFMVUVEIn19LCJoZXJvUGlkIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6Imhlcm9QaWQiLCJpbmZlcmVuY2VUeXBlIjoiUElEIiwidmFsdWUiOiJKQVNGR0VWUzlHWUZIQlJTIiwidmFsdWVUeXBlIjoiU0lOR0xFX1ZBTFVFRCJ9fSwidGl0bGUiOnsibXVsdGlWYWx1ZWRBdHRyaWJ1dGUiOnsia2V5IjoidGl0bGUiLCJpbmZlcmVuY2VUeXBlIjoiVElUTEUiLCJ2YWx1ZXMiOlsiRm9vZCBTcHJlYWRzIl0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fX19fQ%3D%3D&amp;fm=neo%2Fmerchandising&amp;iid=M_e5292aa9-e533-4803-8f7d-211ffbd48ce3_23.HNDZ50TFE3Z9&amp;ppt=hp&amp;ppn=homepage&amp;ssid=86ewpr9717ksfaps1661405177638&amp;otracker=hp_omu_Grooming%252C%2BBooks%252C%2BAuto%2B%2526%2Bmore_7_23.dealCard.OMU_HNDZ50TFE3Z9_9&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Grooming%252C%2BBooks%252C%2BAuto%2B%2526%2Bmore_NA_dealCard_cc_7_NA_view-all_9&amp;cid=HNDZ50TFE3Z9"><div class="" style="height: 150px;"><div class="" style="height: 150px; min-width: 0px;"><img class="" alt="MYFITNESS Chocolate Peanut Butter Crunchy 510 g" src="https://rukminim1.flixcart.com/image/150/150/klzhq4w0/jam-spread/w/q/u/510-chocolate-peanut-butter-crunchy-510g-jar-nut-butter-original-imagyzpqqfaguxny.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/klzhq4w0/jam-spread/w/q/u/510-chocolate-peanut-butter-crunchy-510g-jar-nut-butter-original-imagyzpqqfaguxny.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/klzhq4w0/jam-spread/w/q/u/510-chocolate-peanut-butter-crunchy-510g-jar-nut-butter-original-imagyzpqqfaguxny.jpeg?q=70 1x"></div></div><div style="font-size: 14px;
+              font-weight: 500;
+              margin-top: 15px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              color: black;">Food Spreads</div><div style="color: #388e3c;
+              padding-top: 8px;">Upto 75% off</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop Now</div><div></div></a>
+            
+          </div>
+          <div class="aditemholder">
+              <a title="Up to 70% Off" class="aditem" href="/baby-care/baby-bath-hair-skin-care/pr?sid=kyh%2Cpl5&amp;p%5B%5D=facets.price_range.from%3DMin&amp;p%5B%5D=facets.price_range.to%3D299&amp;p%5B%5D=facets.serviceability%5B%5D%3Dtrue&amp;p%5B%5D=facets.fulfilled_by%255B%255D%3DFlipkart%2BAssured&amp;hpid=x4ERdWPB8EqNGCsItNulpKp7_Hsxr70nj65vMAAFKlc%3D&amp;ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJGcm9tIOKCuTY5Il0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fSwiaGVyb1BpZCI6eyJzaW5nbGVWYWx1ZUF0dHJpYnV0ZSI6eyJrZXkiOiJoZXJvUGlkIiwiaW5mZXJlbmNlVHlwZSI6IlBJRCIsInZhbHVlIjoiU09QRVpXWVBLUkVHQ1hCWCIsInZhbHVlVHlwZSI6IlNJTkdMRV9WQUxVRUQifX0sInRpdGxlIjp7Im11bHRpVmFsdWVkQXR0cmlidXRlIjp7ImtleSI6InRpdGxlIiwiaW5mZXJlbmNlVHlwZSI6IlRJVExFIiwidmFsdWVzIjpbIkJhYnkgQmF0aCAmIFNraW4gQ2FyZSJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX19fX0%3D&amp;fm=neo%2Fmerchandising&amp;iid=M_e5292aa9-e533-4803-8f7d-211ffbd48ce3_23.49RIZA0UEFSJ&amp;ppt=hp&amp;ppn=homepage&amp;ssid=86ewpr9717ksfaps1661405177638&amp;otracker=hp_omu_Grooming%252C%2BBooks%252C%2BAuto%2B%2526%2Bmore_8_23.dealCard.OMU_49RIZA0UEFSJ_9&amp;otracker1=hp_omu_PINNED_neo%2Fmerchandising_Grooming%252C%2BBooks%252C%2BAuto%2B%2526%2Bmore_NA_dealCard_cc_8_NA_view-all_9&amp;cid=49RIZA0UEFSJ"><div class="" style="height: 150px;"><div class="" style="height: 150px; min-width: 0px;"><img class="" alt="Johnson's Baby No More Tears Shampoo 500 ml Baby Boys &amp; Baby Girls" src="https://rukminim1.flixcart.com/image/150/150/jve4pe80/shampoo/9/f/q/500-baby-no-more-tears-shampoo-500-ml-johnson-s-original-imaf6uf4gtswfu8k.jpeg?q=70" srcset="https://rukminim1.flixcart.com/image/300/300/jve4pe80/shampoo/9/f/q/500-baby-no-more-tears-shampoo-500-ml-johnson-s-original-imaf6uf4gtswfu8k.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/jve4pe80/shampoo/9/f/q/500-baby-no-more-tears-shampoo-500-ml-johnson-s-original-imaf6uf4gtswfu8k.jpeg?q=70 1x"></div></div><div style="font-size: 14px;
+              font-weight: 500;
+              margin-top: 15px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              color: black;">Baby Bath & Skin Care</div><div style="color: #388e3c;
+              padding-top: 8px;">From Rs 69</div><div style ="color: #7A7A7A; padding-top: 8px;">Shop Now</div><div></div></a>            
+          </div>
+          </div> 
+      </div> 
+    </div>
+  </div>
+
+
+
+
+<!-- for the footer -->
+  <footer>
+    <div class="bottomdetails">
+        <div class="column">
+          <div class = "heading">ABOUT</div>
+          <a href="#" class="contents">Contact Us</a>
+          <a href="#" class="contents">About Us</a>
+          <a href="#" class="contents">Careers</a>
+          <a href="#" class="contents">Flipkart Stories</a>
+          <a href="#" class="contents">Press</a>
+          <a href="#" class="contents">Flipkart Wholesale</a>
+          <a href="#" class="contents">Corporate Information</a>
+        </div>
+        <div class="column">
+          <div class = "heading">HELP</div>
+          <a href="#" class="contents">Payments</a>
+          <a href="#" class="contents">Shipping</a>
+          <a href="#" class="contents">Cancellation & Returns</a>
+          <a href="#" class="contents">FAQ</a>
+          <a href="#" class="contents">Report Infringement</a>
+        </div>
+      <div class="column">
+        <div class = "heading">POLICY</div>
+        <a href="#" class="contents">Return Policy</a>
+        <a href="#" class="contents">Terms of Use</a>
+        <a href="#" class="contents">Security</a>
+        <a href="#" class="contents">Privacy</a>
+        <a href="#" class="contents">Report</a>
+        <a href="#" class="contents">Infringement</a>
+      </div>
+      <div class="column">
+        <div class = "heading">SOCIAL</div>
+        <a href="#" class = "contents">Facebook</a>
+        <a href="#" class="contents">Twitter</a>
+        <a href="#" class="contents">YouTube</a>
+      </div>
+      <div class="column2">
+        <div class = "heading">Mail us:</div>
+        <div>
+        <p class="contents2" style="margin-bottom: 0px">Flipkart Internet Private Limited, </p>
+        <p class="contents2"style="margin-bottom: 0px"> Buildings Alyssa, Begonia &amp; </p>
+        <p class="contents2"style="margin-bottom: 0px"> Clove Embassy Tech Village, </p>
+        <p class="contents2"style="margin-bottom: 0px"> Outer Ring Road, Devarabeesanahalli Village, </p>
+        <p class="contents2"style="margin-bottom: 0px"> Bengaluru, 560103, </p>
+        <p class="contents2"style="margin-bottom: 0px"> Karnataka, India</p>
+        </div>
+      </div>
+      <div class="column2">
+        <div class = "heading">Registered Office Address</div>
+        <p class="contents2" style="margin-bottom: 0px">Flipkart Internet Private Limited, </p>
+        <p class="contents2" style="margin-bottom: 0px"> Buildings Alyssa, Begonia &amp; </p>
+        <p class="contents2" style="margin-bottom: 0px"> Clove Embassy Tech Village, </p>
+        <p class="contents2" style="margin-bottom: 0px"> Outer Ring Road, Devarabeesanahalli Village, </p>
+        <p class="contents2" style="margin-bottom: 0px"> Bengaluru, 560103, </p>
+        <p class="contents2" style="margin-bottom: 0px"> Karnataka, India </p>
+        <p class="contents2" style="margin-bottom: 0px"> CIN : U51109KA2012PTC066107 </p>
+        <p class="contents2" style="margin-bottom: 0px;"> Telephone: <a href="tel:18002029898" style="color: #0d6efd;">044-45614700</a></p>
+      </div>
+    </div>
+    <hr style="color: #878787;" />
+    <div class="bottomdetails2">    
+        <a style = "color: #FFF"href="#"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDE2IDE1Ij4KICAgIDxkZWZzPgogICAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYSIgeDE9IjAlIiB4Mj0iODYuODc2JSIgeTE9IjAlIiB5Mj0iODAuMjAyJSI+CiAgICAgICAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNGRkQ4MDAiLz4KICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjRkZBRjAwIi8+CiAgICAgICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDwvZGVmcz4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTS0yLTJoMjB2MjBILTJ6Ii8+CiAgICAgICAgPHBhdGggZmlsbD0idXJsKCNhKSIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNMTUuOTMgNS42MTRoLTIuOTQ4VjQuMTRjMC0uODE4LS42NTUtMS40NzMtMS40NzMtMS40NzNIOC41NmMtLjgxNyAwLTEuNDczLjY1NS0xLjQ3MyAxLjQ3M3YxLjQ3NEg0LjE0Yy0uODE4IDAtMS40NjYuNjU2LTEuNDY2IDEuNDc0bC0uMDA3IDguMTA1YzAgLjgxOC42NTUgMS40NzQgMS40NzMgMS40NzRoMTEuNzljLjgxOCAwIDEuNDc0LS42NTYgMS40NzQtMS40NzRWNy4wODhjMC0uODE4LS42NTYtMS40NzQtMS40NzQtMS40NzR6bS00LjQyMSAwSDguNTZWNC4xNGgyLjk0OHYxLjQ3NHoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yIC0yKSIvPgogICAgPC9nPgo8L3N2Zz4K"><span>Become a Seller</span></a>
+        <a style = "color: #FFF;"href="#"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDE1IDE1Ij4KICAgIDxkZWZzPgogICAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYSIgeDE9IjAlIiB4Mj0iODYuODc2JSIgeTE9IjAlIiB5Mj0iODAuMjAyJSI+CiAgICAgICAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNGRkQ4MDAiLz4KICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjRkZBRjAwIi8+CiAgICAgICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDwvZGVmcz4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTS0zLTNoMjB2MjBILTN6Ii8+CiAgICAgICAgPHBhdGggZmlsbD0idXJsKCNhKSIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNMTAuNDkyIDNDNi4zNTMgMyAzIDYuMzYgMyAxMC41YzAgNC4xNCAzLjM1MyA3LjUgNy40OTIgNy41QzE0LjY0IDE4IDE4IDE0LjY0IDE4IDEwLjUgMTggNi4zNiAxNC42NCAzIDEwLjQ5MiAzem0zLjE4IDEyTDEwLjUgMTMuMDg4IDcuMzI3IDE1bC44NC0zLjYwN0w1LjM3IDguOTdsMy42OS0uMzE1TDEwLjUgNS4yNWwxLjQ0IDMuMzk4IDMuNjkuMzE1LTIuNzk4IDIuNDIyLjg0IDMuNjE1eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTMgLTMpIi8+CiAgICA8L2c+Cjwvc3ZnPgo="><span>Advertise</span></a>     
+        <a style = "color: #FFF;"href="#"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxNyIgdmlld0JveD0iMCAwIDE4IDE3Ij4KICAgIDxkZWZzPgogICAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYSIgeDE9IjAlIiB4Mj0iODYuODc2JSIgeTE9IjAlIiB5Mj0iODAuMjAyJSI+CiAgICAgICAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNGRkQ4MDAiLz4KICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjRkZBRjAwIi8+CiAgICAgICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDwvZGVmcz4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTS0xLTFoMjB2MjBILTF6Ii8+CiAgICAgICAgPHBhdGggZmlsbD0idXJsKCNhKSIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNMTYuNjY3IDVIMTQuODVjLjA5Mi0uMjU4LjE1LS41NDIuMTUtLjgzM2EyLjQ5NyAyLjQ5NyAwIDAgMC00LjU4My0xLjM3NUwxMCAzLjM1bC0uNDE3LS41NjdBMi41MSAyLjUxIDAgMCAwIDcuNSAxLjY2N2EyLjQ5NyAyLjQ5NyAwIDAgMC0yLjUgMi41YzAgLjI5MS4wNTguNTc1LjE1LjgzM0gzLjMzM2MtLjkyNSAwLTEuNjU4Ljc0Mi0xLjY1OCAxLjY2N2wtLjAwOCA5LjE2NkExLjY2IDEuNjYgMCAwIDAgMy4zMzMgMTcuNWgxMy4zMzRhMS42NiAxLjY2IDAgMCAwIDEuNjY2LTEuNjY3VjYuNjY3QTEuNjYgMS42NiAwIDAgMCAxNi42NjcgNXptMCA2LjY2N0gzLjMzM3YtNWg0LjIzNEw1LjgzMyA5LjAyNWwxLjM1Ljk3NSAxLjk4NC0yLjdMMTAgNi4xNjdsLjgzMyAxLjEzMyAxLjk4NCAyLjcgMS4zNS0uOTc1LTEuNzM0LTIuMzU4aDQuMjM0djV6IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMSAtMSkiLz4KICAgIDwvZz4KPC9zdmc+Cg=="><span>Gift Cards</span></a>
+        <a style = "color: #FFF"href="#"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDE1IDE1Ij4KICAgIDxkZWZzPgogICAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYSIgeDE9IjAlIiB4Mj0iODYuODc2JSIgeTE9IjAlIiB5Mj0iODAuMjAyJSI+CiAgICAgICAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNGRkQ4MDAiLz4KICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjRkZBRjAwIi8+CiAgICAgICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDwvZGVmcz4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTS0yLTNoMjB2MjBILTJ6Ii8+CiAgICAgICAgPHBhdGggZmlsbD0idXJsKCNhKSIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNOS41IDNDNS4zNiAzIDIgNi4zNiAyIDEwLjUgMiAxNC42NCA1LjM2IDE4IDkuNSAxOGM0LjE0IDAgNy41LTMuMzYgNy41LTcuNUMxNyA2LjM2IDEzLjY0IDMgOS41IDN6bS43NSAxMi43NWgtMS41di0xLjVoMS41djEuNXptMS41NTMtNS44MTNsLS42NzYuNjljLS41NC41NDgtLjg3Ny45OTgtLjg3NyAyLjEyM2gtMS41di0uMzc1YzAtLjgyNS4zMzgtMS41NzUuODc3LTIuMTIzbC45My0uOTQ1Yy4yNzgtLjI3LjQ0My0uNjQ1LjQ0My0xLjA1NyAwLS44MjUtLjY3NS0xLjUtMS41LTEuNVM4IDcuNDI1IDggOC4yNUg2LjVhMyAzIDAgMSAxIDYgMGMwIC42Ni0uMjcgMS4yNi0uNjk3IDEuNjg4eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIgLTMpIi8+CiAgICA8L2c+Cjwvc3ZnPgo="><span>Help Center</span></a>
+        <p style="color: #FFFFFF;">© 2007-2022 Flipkart.com</p>
+        <img style = "width: 377px; height: 18px;"src="static/debitcards.png">
+      </div>
+  </footer>
+</body>
+</html>
+
+
+
+
